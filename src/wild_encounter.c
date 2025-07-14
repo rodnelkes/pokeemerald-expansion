@@ -1076,7 +1076,7 @@ u16 GetLocalWildMon(bool8 *isWaterMon)
     }
     #if RANDOMIZER_AVAILABLE == TRUE
     {
-        enum WildArea area;
+        enum WildPokemonArea area;
         if (*isWaterMon)
             area = WILD_AREA_WATER;
         else

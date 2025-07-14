@@ -9,6 +9,7 @@
 #include "pokemon.h"
 #include "script.h"
 #include "data.h"
+#include "../include/item.h"
 #include "data/randomizer/special_form_tables.h"
 #include "constants/abilities.h"
 #include "data/randomizer/ability_whitelist.h"
@@ -238,7 +239,7 @@ u16 RandomizerRandRange(enum RandomizerReason reason, u32 data1, u32 data2, u16 
 // Utility functions for the field item randomizer.
 static inline bool32 IsItemTMHM(u16 itemId)
 {
-    return ItemId_GetPocket(itemId) == POCKET_TM_HM;
+    return GetItemPocket(itemId) == POCKET_TM_HM;
 }
 
 static inline bool32 IsItemHM(u16 itemId)
@@ -248,7 +249,7 @@ static inline bool32 IsItemHM(u16 itemId)
 
 static inline bool32 IsKeyItem(u16 itemId)
 {
-    return ItemId_GetPocket(itemId) == POCKET_KEY_ITEMS;
+    return GetItemPocket(itemId) == POCKET_KEY_ITEMS;
 }
 
 // Don't randomize HMs or key items, that can make the game unwinnable.
@@ -815,11 +816,11 @@ u16 RandomizeMon(enum RandomizerReason reason, enum RandomizerSpeciesMode mode, 
     }
 }
 
-u16 RandomizeWildEncounter(u16 species, u8 mapNum, u8 mapGroup, enum WildArea area, u8 slot)
+u16 RandomizeWildEncounter(u16 species, u8 mapNum, u8 mapGroup, enum WildPokemonArea area, u8 slot)
 {
     if (RandomizerFeatureEnabled(RANDOMIZE_WILD_MON))
     {
-        // Randomization is done based on the map number, the WildArea, and the encounter slot.
+        // Randomization is done based on the map number, the WildPokemonArea, and the encounter slot.
         // This means a distinct species can appear in each encounter slot.
         u32 seed;
         seed = ((u32)mapGroup) << 24;
