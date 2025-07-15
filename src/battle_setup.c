@@ -873,6 +873,8 @@ static void CB2_GiveStarter(void)
     *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
     starterMon = GetStarterPokemon(gSpecialVar_Result);
     ScriptGiveMon(starterMon, 5, ITEM_NONE);
+    FlagSet(FLAG_BATTLE_DYNAMAX);
+    FlagSet(FLAG_BATTLE_TERA_ORB_CHARGED);
     ResetTasks();
     PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);
