@@ -1585,7 +1585,7 @@ static u8 GetEncounterLevelFromMapData(u16 species, enum EncounterType environme
         {
             #if RANDOMIZER_AVAILABLE == TRUE
                 speciesToCheck = RandomizeWildEncounter(
-                    waterMonsInfo->wildPokemon[i].species,
+                    hiddenMonsInfo->wildPokemon[i].species,
                     gWildMonHeaders[headerId].mapNum,
                     gWildMonHeaders[headerId].mapGroup,
                     WILD_AREA_WATER, i);
@@ -1854,6 +1854,13 @@ static bool8 CapturedAllHiddenMons(u32 headerId)
         for (i = 0; i < HIDDEN_WILD_COUNT; ++i)
         {
             species = hiddenMonsInfo->wildPokemon[i].species;
+            #if RANDOMIZER_AVAILABLE == TRUE
+                species = RandomizeWildEncounter(
+                    species,
+                    gWildMonHeaders[headerId].mapNum,
+                    gWildMonHeaders[headerId].mapGroup,
+                    WILD_AREA_HIDDEN, i);
+            #endif
             if (species != SPECIES_NONE)
             {
                 count++;
@@ -2048,6 +2055,13 @@ static void DexNavLoadEncounterData(void)
         for (i = 0; i < HIDDEN_WILD_COUNT; i++)
         {
             species = hiddenMonsInfo->wildPokemon[i].species;
+            #if RANDOMIZER_AVAILABLE == TRUE
+                species = RandomizeWildEncounter(
+                    species,
+                    gWildMonHeaders[headerId].mapNum,
+                    gWildMonHeaders[headerId].mapGroup,
+                    WILD_AREA_HIDDEN, i);
+            #endif
             if (species != SPECIES_NONE && !SpeciesInArray(species, 2))
                 sDexNavUiDataPtr->hiddenSpecies[hiddenIndex++] = hiddenMonsInfo->wildPokemon[i].species;
         }
