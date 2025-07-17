@@ -505,7 +505,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GivePokedex::
 	call LittlerootTown_ProfessorBirchsLab_EventScript_ReceivePokedex
 	setflag FLAG_SYS_NATIONAL_DEX
 	special EnableNationalPokedex
-	setflag DN_FLAG_DEXNAV_GET
+	setflag FLAG_DEXNAV_GET
 	setflag FLAG_DEXNAV_DETECTOR_MODE
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_ExplainPokedex, MSGBOX_DEFAULT
 	closemessage
