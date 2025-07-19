@@ -137,7 +137,7 @@ static bool32 IsSpeciesPermitted(u16 species)
     if (gSpeciesInfo[species].baseHP == 0)
         return FALSE;
     if (gSpeciesInfo[species].randomizerMode == MON_RANDOMIZER_INVALID)
-        return FALSE;
+        return TRUE;
 
     return TRUE;
 };
