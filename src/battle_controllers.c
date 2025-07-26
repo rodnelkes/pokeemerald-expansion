@@ -89,13 +89,7 @@ void RandomizeBirchZigzagoon()
     ObjectEventSetGraphicsId(objectEvent, gfxId);
 
     struct Sprite *sprite = &gSprites[objectEvent->spriteId];
-    struct SpritePalette palette;
-    if (isFemale)
-        palette.data = isShiny ? gSpeciesInfo[species].overworldShinyPaletteFemale : gSpeciesInfo[species].overworldPaletteFemale;
-    else
-        palette.data = isShiny ? gSpeciesInfo[species].overworldShinyPalette : gSpeciesInfo[species].overworldPalette;
-    palette.tag = gfxId;
-    sprite->oam.paletteNum = LoadSpritePalette(&palette);
+    sprite->oam.paletteNum = LoadDynamicFollowerPalette(species, isShiny, isFemale);
 
     ZeroMonData(randomMon);
 }
