@@ -82,7 +82,7 @@ struct TrainerMon
 
 #define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)
 
-enum TrainerBattleType 
+enum TrainerBattleType
 {
     TRAINER_BATTLE_TYPE_SINGLES,
     TRAINER_BATTLE_TYPE_DOUBLES,
@@ -106,6 +106,7 @@ struct Trainer
     /*0x23*/ u8 poolPickIndex;
     /*0x24*/ u8 poolPruneIndex;
     /*0x25*/ u16 overrideTrainer;
+    /*0x27*/ bool8 isBossTrainer:1;
 };
 
 struct TrainerClass
@@ -299,6 +300,14 @@ static inline const struct TrainerMon *GetTrainerPartyFromId(u16 trainerId)
 static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
 {
     return GetTrainerStructFromId(trainerId)->aiFlags;
+}
+
+static inline const bool32 IsBossTrainerBattle(u16 trainerId)
+{
+    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
+    enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
+
+    return gTrainers[difficulty][sanitizedTrainerId].isBossTrainer;
 }
 
 #endif // GUARD_DATA_H
