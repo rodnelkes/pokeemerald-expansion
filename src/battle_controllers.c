@@ -11,12 +11,14 @@
 #include "battle_setup.h"
 #include "battle_tv.h"
 #include "cable_club.h"
+#include "event_data.h"
 #include "event_object_movement.h"
 #include "link.h"
 #include "link_rfu.h"
 #include "m4a.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "randomizer.h"
 #include "recorded_battle.h"
 #include "string_util.h"
 #include "sound.h"
@@ -25,6 +27,8 @@
 #include "util.h"
 #include "text.h"
 #include "constants/abilities.h"
+#include "constants/event_objects.h"
+#include "constants/map_event_ids.h"
 #include "constants/songs.h"
 #include "pokemon_animation.h"
 
@@ -60,6 +64,37 @@ void HandleLinkBattleSetup(void)
     }
 }
 
+void RandomizeBirchZigzagoon()
+{
+    u8 mapNum = gSaveBlock1Ptr->location.mapNum;
+    u8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+    u8 localId = LOCALID_ROUTE101_ZIGZAGOON;
+    struct ObjectEvent *objectEvent = &gObjectEvents[GetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup)];
+
+    u16 species = RandomizeFixedEncounterMon(SPECIES_ZIGZAGOON, mapNum, mapGroup, localId);
+    struct Pokemon *randomMon = &gEnemyParty[0];
+    CreateMon(randomMon, species, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+
+    u32 personality = GetMonData(randomMon, MON_DATA_PERSONALITY);
+    VarSet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_L, (u16) personality);
+    VarSet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_H, (u16) (personality >> 16));
+
+    bool32 isShiny = GetMonData(randomMon, MON_DATA_IS_SHINY);
+    u8 isFemale = GetMonGender(randomMon) == MON_FEMALE;
+    u16 gfxId = species + OBJ_EVENT_MON;
+    if (isShiny)
+        gfxId += OBJ_EVENT_MON_SHINY;
+    if (isFemale)
+        gfxId += OBJ_EVENT_MON_FEMALE;
+
+    ObjectEventSetGraphicsId(objectEvent, gfxId);
+
+    struct Sprite *sprite = &gSprites[objectEvent->spriteId];
+    sprite->oam.paletteNum = LoadDynamicFollowerPalette(species, isShiny, isFemale);
+
+    ZeroEnemyPartyMons();
+}
+
 void SetUpBattleVarsAndBirchZigzagoon(void)
 {
     s32 i;
@@ -83,7 +118,17 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
     {
         ZeroEnemyPartyMons();
-        CreateMon(&gEnemyParty[0], SPECIES_ZIGZAGOON, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+        #if (RANDOMIZER_AVAILABLE)
+            u8 mapNum = gSaveBlock1Ptr->location.mapNum;
+            u8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+            u8 localId = LOCALID_ROUTE101_ZIGZAGOON;
+
+            u16 species = RandomizeFixedEncounterMon(SPECIES_ZIGZAGOON, mapNum, mapGroup, localId);
+            u32 personality = ((u32) VarGet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_H) << 16) | VarGet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_L);
+            CreateMon(&gEnemyParty[0], species, 2, USE_RANDOM_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+        #else
+            CreateMon(&gEnemyParty[0], SPECIES_ZIGZAGOON, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+        #endif
         i = 0;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &i);
     }
