@@ -5,6 +5,7 @@
 #include "field_screen_effect.h"
 #include "field_specials.h"
 #include "fieldmap.h"
+#include "item.h"
 #include "main.h"
 #include "overworld.h"
 #include "palette.h"
@@ -251,6 +252,12 @@ static void Task_HandleTruckSequence(u8 taskId)
             DrawWholeMapView();
             PlaySE(SE_TRUCK_DOOR);
             DestroyTask(taskId);
+            AddBagItem(ITEM_MEGA_RING, 1);
+            AddBagItem(ITEM_Z_POWER_RING, 1);
+            AddBagItem(ITEM_DYNAMAX_BAND, 1);
+            AddBagItem(ITEM_TERA_ORB, 1);
+            AddBagItem(ITEM_EXP_SHARE, 1);
+            AddBagItem(ITEM_VS_SEEKER, 1);
             UnlockPlayerFieldControls();
         }
         break;
