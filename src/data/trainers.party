@@ -1226,7 +1226,7 @@ Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Slakoth @ Sitrus Berry
+Slakoth
 Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -2003,7 +2003,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon @ Nugget
+Zigzagoon
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2017,11 +2017,11 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Luvdisc @ Nugget
+Luvdisc
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Luvdisc @ Nugget
+Luvdisc
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -2056,7 +2056,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon @ Nugget
+Zigzagoon
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2070,7 +2070,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Seaking @ Nugget
+Seaking
 Level: 40
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -2084,7 +2084,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Roselia @ Nugget
+Roselia
 Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -2098,7 +2098,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
+Linoone
 Level: 27
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -2112,7 +2112,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
+Linoone
 Level: 30
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -2126,7 +2126,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
+Linoone
 Level: 33
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -2140,7 +2140,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
+Linoone
 Level: 36
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -2342,7 +2342,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon @ Nugget
+Zigzagoon
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2373,7 +2373,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Azumarill @ Nugget
+Azumarill
 Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2387,7 +2387,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
+Linoone
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2401,7 +2401,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
+Linoone
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2415,7 +2415,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
+Linoone
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -2429,7 +2429,7 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move
 
-Linoone @ Nugget
+Linoone
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -3118,7 +3118,7 @@ Machoke
 Level: 33
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Machamp @ Black Belt
+Machamp
 Level: 33
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -3878,7 +3878,7 @@ Surskit
 Level: 38
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Masquerain @ Silver Powder
+Masquerain
 Level: 38
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -4370,7 +4370,7 @@ Crawdaunt
 Level: 48
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
-Absol @ Sitrus Berry
+Absol
 Level: 49
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -4401,7 +4401,7 @@ Banette
 Level: 49
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
-Dusclops @ Sitrus Berry
+Dusclops
 Level: 51
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -4432,7 +4432,7 @@ Glalie
 Level: 52
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
-Walrein @ Sitrus Berry
+Walrein
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -4463,7 +4463,7 @@ Flygon
 Level: 53
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
-Salamence @ Sitrus Berry
+Salamence
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -4485,7 +4485,7 @@ Geodude
 Level: 12
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Nosepass @ Oran Berry
+Nosepass
 Level: 15
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -4507,7 +4507,7 @@ Meditite
 Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Makuhita @ Sitrus Berry
+Makuhita
 Level: 19
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -4533,7 +4533,7 @@ Magneton
 Level: 22
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
-Manectric @ Sitrus Berry
+Manectric
 Level: 24
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
@@ -4559,7 +4559,7 @@ Camerupt
 Level: 26
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
-Torkoal @ White Herb
+Torkoal
 Level: 29
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
@@ -4585,7 +4585,7 @@ Linoone
 Level: 29
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Slaking @ Sitrus Berry
+Slaking
 Level: 31
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
@@ -4615,7 +4615,7 @@ Skarmory
 Level: 31
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
-Altaria @ Oran Berry
+Altaria
 Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -4637,11 +4637,11 @@ Xatu
 Level: 41
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
-Lunatone @ Sitrus Berry
+Lunatone
 Level: 42
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
-Solrock @ Sitrus Berry
+Solrock
 Level: 42
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
@@ -4671,7 +4671,7 @@ Crawdaunt
 Level: 43
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Kingdra @ Chesto Berry
+Kingdra
 Level: 46
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
@@ -5003,11 +5003,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Taillow @ Oran Berry
+Taillow
 Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Zigzagoon @ Oran Berry
+Zigzagoon
 Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -5020,7 +5020,7 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Skitty @ Oran Berry
+Skitty
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5033,27 +5033,27 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Skitty @ Oran Berry
+Skitty
 Level: 22
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skitty @ Oran Berry
+Skitty
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skitty @ Oran Berry
+Skitty
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skitty @ Oran Berry
+Skitty
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Skitty @ Oran Berry
+Skitty
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Delcatty @ Oran Berry
+Delcatty
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5066,7 +5066,7 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Skitty @ Oran Berry
+Skitty
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5079,7 +5079,7 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Skitty @ Oran Berry
+Skitty
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5092,7 +5092,7 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Delcatty @ Oran Berry
+Delcatty
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5105,7 +5105,7 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Delcatty @ Sitrus Berry
+Delcatty
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5118,7 +5118,7 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-Roselia @ Oran Berry
+Roselia
 Level: 17
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
@@ -5131,7 +5131,7 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Pikachu @ Oran Berry
+Pikachu
 Level: 30
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5144,15 +5144,15 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Azurill @ Oran Berry
+Azurill
 Level: 35
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Marill @ Oran Berry
+Marill
 Level: 37
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Azumarill @ Oran Berry
+Azumarill
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -5165,11 +5165,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Plusle @ Oran Berry
+Plusle
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Minun @ Oran Berry
+Minun
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5182,11 +5182,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Plusle @ Oran Berry
+Plusle
 Level: 26
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-Minun @ Oran Berry
+Minun
 Level: 26
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
@@ -5199,11 +5199,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Plusle @ Oran Berry
+Plusle
 Level: 29
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Minun @ Oran Berry
+Minun
 Level: 29
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
@@ -5216,11 +5216,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Plusle @ Oran Berry
+Plusle
 Level: 32
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Minun @ Oran Berry
+Minun
 Level: 32
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
@@ -5233,11 +5233,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Plusle @ Sitrus Berry
+Plusle
 Level: 35
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Minun @ Sitrus Berry
+Minun
 Level: 35
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -5710,7 +5710,7 @@ Gyarados
 Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Milotic @ Sitrus Berry
+Milotic
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -6691,7 +6691,7 @@ Altaria
 Level: 49
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
-Shelgon @ Dragon Fang
+Shelgon
 Level: 49
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
@@ -7172,7 +7172,7 @@ Koffing
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-Weezing @ Smoke Ball
+Weezing
 Level: 35
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
@@ -8438,11 +8438,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Feebas @ Oran Berry
+Feebas
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Feebas @ Oran Berry
+Feebas
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -11971,7 +11971,7 @@ Music: Rich
 Double Battle: No
 AI: Check Bad Move
 
-Zigzagoon @ Nugget
+Zigzagoon
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -11993,7 +11993,7 @@ Lotad
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zigzagoon @ Nugget
+Zigzagoon
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -12049,11 +12049,11 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move
 
-Minun @ Oran Berry
+Minun
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Plusle @ Oran Berry
+Plusle
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -13194,7 +13194,7 @@ Golem
 Level: 32
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Kabuto @ Sitrus Berry
+Kabuto
 Level: 35
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13202,7 +13202,7 @@ Onix
 Level: 35
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Nosepass @ Sitrus Berry
+Nosepass
 Level: 37
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13224,7 +13224,7 @@ Golem
 Level: 37
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Kabutops @ Sitrus Berry
+Kabutops
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13232,7 +13232,7 @@ Onix
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Nosepass @ Sitrus Berry
+Nosepass
 Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13254,7 +13254,7 @@ Golem
 Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Kabutops @ Sitrus Berry
+Kabutops
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13262,7 +13262,7 @@ Onix
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Nosepass @ Sitrus Berry
+Nosepass
 Level: 47
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13288,7 +13288,7 @@ Omastar
 Level: 47
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Kabutops @ Sitrus Berry
+Kabutops
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13296,7 +13296,7 @@ Steelix
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Nosepass @ Sitrus Berry
+Nosepass
 Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13310,7 +13310,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Machamp @ Sitrus Berry
+Machamp
 Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13322,7 +13322,7 @@ Hitmontop
 Level: 35
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Hariyama @ Sitrus Berry
+Hariyama
 Level: 37
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13336,7 +13336,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Machamp @ Sitrus Berry
+Machamp
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13348,7 +13348,7 @@ Hitmontop
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Hariyama @ Sitrus Berry
+Hariyama
 Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13366,7 +13366,7 @@ Hitmonchan
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Machamp @ Sitrus Berry
+Machamp
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13378,7 +13378,7 @@ Hitmontop
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Hariyama @ Sitrus Berry
+Hariyama
 Level: 47
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13400,7 +13400,7 @@ Hitmonchan
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Machamp @ Sitrus Berry
+Machamp
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13412,7 +13412,7 @@ Hitmontop
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Hariyama @ Sitrus Berry
+Hariyama
 Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13434,11 +13434,11 @@ Electrode
 Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Magneton @ Sitrus Berry
+Magneton
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Manectric @ Sitrus Berry
+Manectric
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13464,11 +13464,11 @@ Electrode
 Level: 41
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Magneton @ Sitrus Berry
+Magneton
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Manectric @ Sitrus Berry
+Manectric
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13494,11 +13494,11 @@ Electrode
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Magneton @ Sitrus Berry
+Magneton
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Manectric @ Sitrus Berry
+Manectric
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13528,11 +13528,11 @@ Electrode
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Magneton @ Sitrus Berry
+Magneton
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Manectric @ Sitrus Berry
+Manectric
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13546,7 +13546,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Magcargo @ White Herb
+Magcargo
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13554,11 +13554,11 @@ Ponyta
 Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Camerupt @ White Herb
+Camerupt
 Level: 38
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Torkoal @ White Herb
+Torkoal
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13576,7 +13576,7 @@ Growlithe
 Level: 41
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Magcargo @ White Herb
+Magcargo
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13584,11 +13584,11 @@ Ponyta
 Level: 41
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Camerupt @ White Herb
+Camerupt
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Torkoal @ White Herb
+Torkoal
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13610,7 +13610,7 @@ Growlithe
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Magcargo @ White Herb
+Magcargo
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13618,11 +13618,11 @@ Rapidash
 Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Camerupt @ White Herb
+Camerupt
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Torkoal @ White Herb
+Torkoal
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13640,7 +13640,7 @@ Arcanine
 Level: 51
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Magcargo @ White Herb
+Magcargo
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13652,11 +13652,11 @@ Rapidash
 Level: 51
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Camerupt @ White Herb
+Camerupt
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Torkoal @ White Herb
+Torkoal
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13674,7 +13674,7 @@ Chansey
 Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Slaking @ Sitrus Berry
+Slaking
 Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13682,7 +13682,7 @@ Spinda
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Slaking @ Sitrus Berry
+Slaking
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13696,7 +13696,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Slaking @ Sitrus Berry
+Slaking
 Level: 47
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13712,7 +13712,7 @@ Spinda
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Slaking @ Sitrus Berry
+Slaking
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13726,7 +13726,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Slaking @ Sitrus Berry
+Slaking
 Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13742,7 +13742,7 @@ Spinda
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Slaking @ Sitrus Berry
+Slaking
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13756,7 +13756,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer
 
-Slaking @ Sitrus Berry
+Slaking
 Level: 57
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13776,7 +13776,7 @@ Spinda
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Slaking @ Sitrus Berry
+Slaking
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13790,7 +13790,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
 
-Dratini @ Sitrus Berry
+Dratini
 Level: 40
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13806,7 +13806,7 @@ Skarmory
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Altaria @ Chesto Berry
+Altaria
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13828,7 +13828,7 @@ Tropius
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Dragonair @ Sitrus Berry
+Dragonair
 Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13840,7 +13840,7 @@ Skarmory
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Altaria @ Chesto Berry
+Altaria
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13862,7 +13862,7 @@ Tropius
 Level: 49
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Dragonair @ Sitrus Berry
+Dragonair
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13874,7 +13874,7 @@ Skarmory
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Altaria @ Chesto Berry
+Altaria
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13900,7 +13900,7 @@ Pelipper
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Dragonite @ Sitrus Berry
+Dragonite
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13908,7 +13908,7 @@ Skarmory
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Altaria @ Chesto Berry
+Altaria
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13930,15 +13930,15 @@ Claydol
 Level: 49
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Xatu @ Chesto Berry
+Xatu
 Level: 49
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Lunatone @ Chesto Berry
+Lunatone
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Solrock @ Sitrus Berry
+Solrock
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13964,15 +13964,15 @@ Claydol
 Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Xatu @ Chesto Berry
+Xatu
 Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Lunatone @ Chesto Berry
+Lunatone
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Solrock @ Sitrus Berry
+Solrock
 Level: 55
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -13998,15 +13998,15 @@ Slowpoke
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Xatu @ Chesto Berry
+Xatu
 Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Lunatone @ Chesto Berry
+Lunatone
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Solrock @ Sitrus Berry
+Solrock
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -14032,15 +14032,15 @@ Slowking
 Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Xatu @ Chesto Berry
+Xatu
 Level: 64
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Lunatone @ Chesto Berry
+Lunatone
 Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Solrock @ Sitrus Berry
+Solrock
 Level: 65
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -14066,11 +14066,11 @@ Walrein
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Crawdaunt @ Chesto Berry
+Crawdaunt
 Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Kingdra @ Chesto Berry
+Kingdra
 Level: 51
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -14096,11 +14096,11 @@ Walrein
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Crawdaunt @ Chesto Berry
+Crawdaunt
 Level: 53
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Kingdra @ Chesto Berry
+Kingdra
 Level: 56
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -14130,11 +14130,11 @@ Walrein
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Crawdaunt @ Chesto Berry
+Crawdaunt
 Level: 58
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Kingdra @ Chesto Berry
+Kingdra
 Level: 61
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -14164,11 +14164,11 @@ Walrein
 Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Crawdaunt @ Chesto Berry
+Crawdaunt
 Level: 63
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Kingdra @ Chesto Berry
+Kingdra
 Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -14232,7 +14232,7 @@ Armaldo
 Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Metagross @ Sitrus Berry
+Metagross
 Level: 78
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
