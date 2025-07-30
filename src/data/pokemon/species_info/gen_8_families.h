@@ -8030,7 +8030,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sCalyrexIceLevelUpLearnset,
         .teachableLearnset = sCalyrexIceTeachableLearnset,
         .formSpeciesIdTable = sCalyrexFormSpeciesIdTable,
-        .randomizerMode = MON_RANDOMIZER_INVALID
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 
     [SPECIES_CALYREX_SHADOW] =
@@ -8099,7 +8099,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sCalyrexShadowLevelUpLearnset,
         .teachableLearnset = sCalyrexShadowTeachableLearnset,
         .formSpeciesIdTable = sCalyrexFormSpeciesIdTable,
-        .randomizerMode = MON_RANDOMIZER_INVALID
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FUSION_FORMS
 #endif //P_FAMILY_CALYREX
@@ -8238,7 +8238,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sEnamorusTeachableLearnset,
         .formSpeciesIdTable = sEnamorusFormSpeciesIdTable,
         .formChangeTable = sEnamorusFormChangeTable,
-        .randomizerMode = MON_RANDOMIZER_INVALID
+        .randomizerMode = MON_RANDOMIZER_INVALID,
     },
 #endif //P_FAMILY_ENAMORUS
 
