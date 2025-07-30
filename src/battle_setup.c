@@ -44,6 +44,8 @@
 #include "item.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_setup.h"
+
+#include "randomizer.h"
 #include "constants/event_objects.h"
 #include "constants/game_stat.h"
 #include "constants/items.h"
@@ -428,7 +430,12 @@ static void DoBattlePyramidTrainerHillBattle(void)
 // Initiates battle where Wally catches Ralts
 void StartWallyTutorialBattle(void)
 {
-    CreateMaleMon(&gEnemyParty[0], SPECIES_RALTS, 5);
+    u8 mapNum = gSaveBlock1Ptr->location.mapNum;
+    u8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+    u8 localId = gObjectEvents[gSelectedObjectEvent].localId;
+    u16 species = RandomizeFixedEncounterMon(SPECIES_RALTS, mapNum, mapGroup, localId);
+    CreateMon(&gEnemyParty[0], species, 5, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
     gBattleTypeFlags = BATTLE_TYPE_WALLY_TUTORIAL;

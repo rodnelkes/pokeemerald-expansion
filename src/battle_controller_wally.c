@@ -133,34 +133,11 @@ static void WallyHandleActions(u32 battler)
     {
     case 0:
         gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
-        gBattleStruct->wallyBattleState++;
-    case 1:
-        if (--gBattleStruct->wallyWaitFrames == 0)
-        {
-            PlaySE(SE_SELECT);
-            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, 0);
-            BtlController_Complete(battler);
-            gBattleStruct->wallyBattleState++;
-            gBattleStruct->wallyMovesState = 0;
-            gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
-        }
-        break;
-    case 2:
-        if (--gBattleStruct->wallyWaitFrames == 0)
-        {
-            PlaySE(SE_SELECT);
-            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, 0);
-            BtlController_Complete(battler);
-            gBattleStruct->wallyBattleState++;
-            gBattleStruct->wallyMovesState = 0;
-            gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
-        }
-        break;
+        gBattleStruct->wallyBattleState += 3;
     case 3:
         if (--gBattleStruct->wallyWaitFrames == 0)
         {
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_WALLY_THROW, 0);
-            BtlController_Complete(battler);
             gBattleStruct->wallyBattleState++;
             gBattleStruct->wallyMovesState = 0;
             gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;

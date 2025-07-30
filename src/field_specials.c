@@ -72,6 +72,7 @@
 #include "palette.h"
 #include "battle_util.h"
 #include "naming_screen.h"
+#include "randomizer.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -1457,16 +1458,11 @@ void SetShoalItemFlag(u16 unused)
 
 void LoadWallyZigzagoon(void)
 {
-    u16 monData;
-    CreateMon(&gPlayerParty[0], SPECIES_ZIGZAGOON, 7, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
-    monData = TRUE;
-    SetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM, &monData);
-    monData = MOVE_TACKLE;
-    SetMonData(&gPlayerParty[0], MON_DATA_MOVE1, &monData);
-    monData = MOVE_NONE;
-    SetMonData(&gPlayerParty[0], MON_DATA_MOVE2, &monData);
-    SetMonData(&gPlayerParty[0], MON_DATA_MOVE3, &monData);
-    SetMonData(&gPlayerParty[0], MON_DATA_MOVE4, &monData);
+    u8 mapNum = gSaveBlock1Ptr->location.mapNum;
+    u8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+    u8 localId = gObjectEvents[gSelectedObjectEvent].localId;
+    u16 species = RandomizeFixedEncounterMon(SPECIES_ZIGZAGOON, mapNum, mapGroup, localId);
+    CreateMon(&gPlayerParty[0], species, 7, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
 }
 
 bool8 IsStarterInParty(void)
