@@ -1923,7 +1923,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u16 species = partyData[monIndex].species;
 
             #if (RANDOMIZER_AVAILABLE)
-                if(!isTrainerBossTrainer)
+                if(!isTrainerBossTrainer && trainer != GetDebugPlayerTrainer() && trainer != GetDebugAiTrainer())
                     species = RandomizeTrainerMon(seed, i, monsCount, species);
             #endif
 
