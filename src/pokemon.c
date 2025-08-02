@@ -66,6 +66,7 @@
 #include "constants/union_room.h"
 #include "constants/weather.h"
 #include "wild_encounter.h"
+#include "randomizer.h"
 
 #define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220)
 
@@ -2754,7 +2755,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             }
             break;
         case MON_DATA_CANT_RANDOMIZE_ABILITY:
-            retVal = substruct3->cantRandomizeAbility;
+            retVal = GetSubstruct3(boxMon)->cantRandomizeAbility;
             break;
         default:
             break;
@@ -3170,7 +3171,7 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         }
         case MON_DATA_CANT_RANDOMIZE_ABILITY:
-            SET8(substruct3->cantRandomizeAbility);
+            SET8(GetSubstruct3(boxMon)->cantRandomizeAbility);
             break;
         default:
             break;
