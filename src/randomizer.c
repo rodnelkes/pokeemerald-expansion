@@ -92,6 +92,12 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
             #else
                 return FlagGet(RANDOMIZER_FLAG_STARTER_AND_GIFT_MON);
             #endif
+        case RANDOMIZE_EGG_MON:
+            #ifdef FORCE_RANDOMIZE_EGG_MON
+                return FORCE_RANDOMIZE_EGG_MON;
+            #else
+                return FlagGet(RANDOMIZER_FLAG_EGG_MON);
+            #endif
         case RANDOMIZE_ABILITIES:
             #ifdef FORCE_RANDOMIZE_ABILITIES
                 return FORCE_RANDOMIZE_ABILITIES;
