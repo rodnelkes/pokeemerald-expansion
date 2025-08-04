@@ -964,9 +964,7 @@ u16 RandomizeEggMon(u16 originalSlot, const u16* originalEggMons)
 
 static inline bool32 IsAbilityIllegal(u16 ability)
 {
-    if (ability == ABILITY_NONE || ability == ABILITY_WONDER_GUARD)
-        return TRUE;
-    return FALSE;
+    return ability == ABILITY_NONE;
 }
 
 // Given a species and an abilityNum, returns a replacement for that ability.
