@@ -1027,7 +1027,20 @@ static void PrintItemDescription(int itemIndex)
     const u8 *str;
     if (itemIndex != LIST_CANCEL)
     {
+        #if RANDOMIZER_AVAILABLE
+        u16 itemId = GetBagItemId(gBagPosition.pocket, itemIndex);
+
+        if (GetItemPocket(itemId) == POCKET_TM_HM)
+        {
+            u16 itemTMHMMoveId = GetItemTMHMMoveId(itemId);
+            u16 moveId = GetTMHMMoveId(itemTMHMMoveId);
+            str = GetMoveDescription(moveId);
+        }
+        else
+            str = GetItemDescription(itemId);
+        #else
         str = GetItemDescription(GetBagItemId(gBagPosition.pocket, itemIndex));
+        #endif
     }
     else
     {

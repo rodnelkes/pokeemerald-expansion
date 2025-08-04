@@ -5340,7 +5340,18 @@ void ItemUseCB_PPUp(u8 taskId, TaskFunc task)
 
 u16 ItemIdToBattleMoveId(u16 item)
 {
-    return (GetItemPocket(item) == POCKET_TM_HM) ? GetItemTMHMMoveId(item) : MOVE_NONE;
+    if (GetItemPocket(item) == POCKET_TM_HM)
+    {
+        u16 itemTMHMMoveId = GetItemTMHMMoveId(item);
+
+        #if RANDOMIZER_AVAILABLE
+            return GetTMHMMoveId(itemTMHMMoveId);
+        #else
+            return itemTMHMMoveId;
+        #endif
+    }
+    else
+        return MOVE_NONE;
 }
 
 bool8 MonKnowsMove(struct Pokemon *mon, u16 move)

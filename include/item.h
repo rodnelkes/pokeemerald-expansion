@@ -1,6 +1,7 @@
 #ifndef GUARD_ITEM_H
 #define GUARD_ITEM_H
 
+#include "move.h"
 #include "constants/item.h"
 #include "constants/item_effects.h"
 #include "constants/items.h"
@@ -8,6 +9,7 @@
 #include "constants/tms_hms.h"
 #include "constants/item_effects.h"
 #include "constants/hold_effects.h"
+#include "randomizer.h"
 
 /* Expands to:
  * enum
@@ -176,7 +178,15 @@ static inline enum TMHMItemId GetTMHMItemId(enum TMHMIndex index)
 
 static inline u16 GetTMHMMoveId(enum TMHMIndex index)
 {
-    return gTMHMItemMoveIds[index].moveId;
+    #if RANDOMIZER_AVAILABLE
+        enum TMHMItemId originalItemId = gTMHMItemMoveIds[index].itemId;
+        u16 originalMoveId = gTMHMItemMoveIds[index].moveId;
+        u16 newMoveId = RandomizeTMHM(originalItemId, originalMoveId);
+
+        return newMoveId;
+    #else
+        return gTMHMItemMoveIds[index].moveId;
+    #endif
 }
 
 void BagPocket_SetSlotData(struct BagPocket *pocket, u32 pocketPos, struct ItemSlot newSlot);
