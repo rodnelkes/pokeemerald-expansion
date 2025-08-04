@@ -13,6 +13,7 @@
 #include "constants/abilities.h"
 #include "data/randomizer/ability_whitelist.h"
 #include "constants/abilities.h"
+#include "data/randomizer/move_whitelist.h"
 
 // Add the mons you wish to be randomized when given as starter/gift mon to this list
 const u16 gStarterAndGiftMonTable[STARTER_AND_GIFT_MON_COUNT] =
@@ -103,6 +104,12 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
                 return FORCE_RANDOMIZE_ABILITIES;
             #else
                 return FlagGet(RANDOMIZER_FLAG_ABILITIES);
+            #endif
+        case RANDOMIZE_TMS_AND_HMS:
+            #ifdef FORCE_RANDOMIZE_TMS_AND_HMS
+                return FORCE_RANDOMIZE_TMS_AND_HMS;
+            #else
+                return FlagGet(RANDOMIZER_FLAG_TMS_AND_HMS);
             #endif
         default:
             return FALSE;
@@ -992,6 +999,28 @@ u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility)
     }
 
     return originalAbility;
+}
+
+// Given an existing TM or HM, returns a random replacement for that move.
+u16 RandomizeTMHM(u16 itemId, u16 moveId)
+{
+    if (RandomizerFeatureEnabled(RANDOMIZE_TMS_AND_HMS))
+    {
+        struct Sfc32State state;
+        u16 result;
+        u32 seed;
+
+        seed = ((u32) itemId << 16);
+        seed |= moveId;
+
+        state = RandomizerRandSeed(RANDOMIZER_REASON_TMS_AND_HMS, seed, itemId);
+
+        result = sRandomizerMoveWhitelist[RandomizerNextRange(&state, Move_WHITELIST_SIZE)];
+
+        return result;
+    }
+
+    return moveId;
 }
 
 #endif // RANDOMIZER_AVAILABLE

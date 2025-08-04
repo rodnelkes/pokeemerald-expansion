@@ -42,6 +42,8 @@ enum RandomizerFeature
     RANDOMIZE_EGG_MON,
     // Randomization of Pokémon abilities.
     RANDOMIZE_ABILITIES,
+    // Randomization of TMs and HMs.
+    RANDOMIZE_TMS_AND_HMS,
 };
 
 enum RandomizerReason
@@ -56,6 +58,7 @@ enum RandomizerReason
     RANDOMIZER_REASON_STARTER_AND_GIFT_MON,
     RANDOMIZER_REASON_EGG,
     RANDOMIZER_REASON_ABILITIES,
+    RANDOMIZER_REASON_TMS_AND_HMS,
 };
 
 enum RandomizerOption {
@@ -128,6 +131,9 @@ u16 RandomizeEggMon(u16 originalSlot, const u16* originalEggMons);
 
 // Given a species and an abilityNum, returns a replacement for that ability.
 u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility);
+
+// Given an existing TM or HM, returns a random replacement for that move.
+u16 RandomizeTMHM(u16 itemId, u16 moveId);
 
 static inline bool32 GroupSetsIntersect(struct RandomizerGroupSet* originalCache, struct RandomizerGroupSet* targetCache)
 {

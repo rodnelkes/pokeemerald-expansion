@@ -42,6 +42,7 @@
 #define FORCE_RANDOMIZE_STARTER_AND_GIFT_MON      TRUE
 #define FORCE_RANDOMIZE_EGG_MON                   TRUE
 #define FORCE_RANDOMIZE_ABILITIES                 TRUE
+#define FORCE_RANDOMIZE_TMS_AND_HMS               TRUE
 
 // These flags control whether a particular randomization feature is active.
 // They are ignored and disabled if the flags above are set.
@@ -71,6 +72,10 @@
 
 #ifndef FORCE_RANDOMIZE_ABILITIES
 #define RANDOMIZER_FLAG_ABILITIES                     FLAG_UNUSED_0x026
+#endif
+
+#ifndef FORCE_RANDOMIZE_TMS_AND_HMS
+#define RANDOMIZER_FLAG_TMS_AND_HMS                   FLAG_UNUSED_0x027
 #endif
 
 #define RANDOMIZER_VAR_SPECIES_MODE                   VAR_RANDOMIZER_SPECIES_MODE
