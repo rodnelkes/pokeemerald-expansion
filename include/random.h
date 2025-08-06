@@ -275,4 +275,10 @@ const void *RandomElementArrayDefault(enum RandomTag, const void *array, size_t 
 
 u8 RandomWeightedIndex(u8 *weights, u8 length);
 
+// https://andrew-helmer.github.io/permute/
+// https://github.com/camel-cdr/cauldron/blob/main/tools/random/permute/README.md
+u64 GetMask(u64 len);
+u64 Hash(u64 idx, u64 mask, u64 seed);
+u64 Permute(u64 idx, u64 len, u64 seed);
+
 #endif // GUARD_RANDOM_H

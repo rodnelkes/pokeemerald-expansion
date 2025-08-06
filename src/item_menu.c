@@ -1033,7 +1033,7 @@ static void PrintItemDescription(int itemIndex)
         if (GetItemPocket(itemId) == POCKET_TM_HM)
         {
             u16 itemTMHMMoveId = GetItemTMHMMoveId(itemId);
-            u16 moveId = GetTMHMMoveId(itemTMHMMoveId);
+            u16 moveId = RandomizeTMHM(itemId, itemTMHMMoveId);
             str = GetMoveDescription(moveId);
         }
         else

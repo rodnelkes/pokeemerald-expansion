@@ -5345,7 +5345,7 @@ u16 ItemIdToBattleMoveId(u16 item)
         u16 itemTMHMMoveId = GetItemTMHMMoveId(item);
 
         #if RANDOMIZER_AVAILABLE
-            return GetTMHMMoveId(itemTMHMMoveId);
+            return RandomizeTMHM(item, itemTMHMMoveId);
         #else
             return itemTMHMMoveId;
         #endif
