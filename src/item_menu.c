@@ -1032,14 +1032,13 @@ static void PrintItemDescription(int itemIndex)
 
         if (GetItemPocket(itemId) == POCKET_TM_HM)
         {
-            u16 itemTMHMMoveId = GetItemTMHMMoveId(itemId);
-            u16 moveId = RandomizeTMHM(itemId, itemTMHMMoveId);
+            u16 moveId = GetItemTMHMMoveId(itemId);
             str = GetMoveDescription(moveId);
         }
         else
             str = GetItemDescription(itemId);
         #else
-        str = GetItemDescription(GetBagItemId(gBagPosition.pocket, itemIndex));
+            str = GetItemDescription(GetBagItemId(gBagPosition.pocket, itemIndex));
         #endif
     }
     else
