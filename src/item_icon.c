@@ -183,7 +183,7 @@ const u16 *GetItemIconPalette(u16 itemId)
         u16 itemTMHMMoveId = GetItemTMHMMoveId(itemId);
 
         #if RANDOMIZER_AVAILABLE
-            itemTMHMMoveId = GetTMHMMoveId(itemTMHMMoveId);
+            itemTMHMMoveId = RandomizeTMHM(itemId, itemTMHMMoveId);
         #endif
 
         return gTypesInfo[GetMoveType(itemTMHMMoveId)].paletteTMHM;

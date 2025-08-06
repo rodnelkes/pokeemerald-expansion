@@ -178,15 +178,7 @@ static inline enum TMHMItemId GetTMHMItemId(enum TMHMIndex index)
 
 static inline u16 GetTMHMMoveId(enum TMHMIndex index)
 {
-    #if RANDOMIZER_AVAILABLE
-        enum TMHMItemId originalItemId = gTMHMItemMoveIds[index].itemId;
-        u16 originalMoveId = gTMHMItemMoveIds[index].moveId;
-        u16 newMoveId = RandomizeTMHM(originalItemId, originalMoveId);
-
-        return newMoveId;
-    #else
-        return gTMHMItemMoveIds[index].moveId;
-    #endif
+    return gTMHMItemMoveIds[index].moveId;
 }
 
 void BagPocket_SetSlotData(struct BagPocket *pocket, u32 pocketPos, struct ItemSlot newSlot);

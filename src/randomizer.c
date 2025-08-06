@@ -1006,16 +1006,14 @@ u16 RandomizeTMHM(u16 itemId, u16 moveId)
 {
     if (RandomizerFeatureEnabled(RANDOMIZE_TMS_AND_HMS))
     {
-        struct Sfc32State state;
         u16 result;
         u32 seed;
 
-        seed = ((u32) itemId << 16);
-        seed |= moveId;
+        seed = ((u32) moveId << 8);
+        seed |= GetRandomizerSeed();
 
-        state = RandomizerRandSeed(RANDOMIZER_REASON_TMS_AND_HMS, seed, itemId);
-
-        result = sRandomizerMoveWhitelist[RandomizerNextRange(&state, Move_WHITELIST_SIZE)];
+        u16 newMove = (u16) Permute(itemId - ITEM_TM01, Move_WHITELIST_SIZE, seed);
+        result = sRandomizerMoveWhitelist[newMove];
 
         return result;
     }
