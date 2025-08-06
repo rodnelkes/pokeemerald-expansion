@@ -129,8 +129,8 @@ extern const struct TmHmIndexKey gTMHMItemMoveIds[];
 
 #define UNPACK_ITEM_TO_TM_INDEX(_tm) case CAT(ITEM_TM_, _tm): return CAT(ENUM_TM_HM_, _tm) + 1;
 #define UNPACK_ITEM_TO_HM_INDEX(_hm) case CAT(ITEM_HM_, _hm): return CAT(ENUM_TM_HM_, _hm) + 1;
-#define UNPACK_ITEM_TO_TM_MOVE_ID(_tm) case CAT(ITEM_TM_, _tm): return CAT(MOVE_, _tm);
-#define UNPACK_ITEM_TO_HM_MOVE_ID(_hm) case CAT(ITEM_HM_, _hm): return CAT(MOVE_, _hm);
+#define UNPACK_ITEM_TO_TM_MOVE_ID(_tm) case CAT(ITEM_TM_, _tm): moveId = CAT(MOVE_, _tm); break;
+#define UNPACK_ITEM_TO_HM_MOVE_ID(_hm) case CAT(ITEM_HM_, _hm): moveId = CAT(MOVE_, _hm); break;
 
 static inline enum TMHMIndex GetItemTMHMIndex(u16 item)
 {
@@ -151,6 +151,8 @@ static inline enum TMHMIndex GetItemTMHMIndex(u16 item)
 
 static inline u16 GetItemTMHMMoveId(u16 item)
 {
+    u16 moveId;
+
     switch (item)
     {
         /* Expands to:
@@ -164,6 +166,12 @@ static inline u16 GetItemTMHMMoveId(u16 item)
         default:
             return MOVE_NONE;
     }
+
+    #if (RANDOMIZER_AVAILABLE)
+        moveId = RandomizeTMHM(item, moveId);
+    #endif
+
+    return moveId;
 }
 
 #undef UNPACK_ITEM_TO_TM_INDEX
@@ -178,7 +186,8 @@ static inline enum TMHMItemId GetTMHMItemId(enum TMHMIndex index)
 
 static inline u16 GetTMHMMoveId(enum TMHMIndex index)
 {
-    return gTMHMItemMoveIds[index].moveId;
+    struct TmHmIndexKey originalTMHM = gTMHMItemMoveIds[index];
+    return originalTMHM.moveId == MOVE_NONE ? MOVE_NONE : RandomizeTMHM(originalTMHM.itemId, originalTMHM.moveId);
 }
 
 void BagPocket_SetSlotData(struct BagPocket *pocket, u32 pocketPos, struct ItemSlot newSlot);

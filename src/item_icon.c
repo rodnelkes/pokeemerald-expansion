@@ -179,15 +179,7 @@ const u16 *GetItemIconPalette(u16 itemId)
     if (itemId >= ITEMS_COUNT)
         return gItemsInfo[0].iconPalette;
     if (gItemsInfo[itemId].pocket == POCKET_TM_HM)
-    {
-        u16 itemTMHMMoveId = GetItemTMHMMoveId(itemId);
-
-        #if RANDOMIZER_AVAILABLE
-            itemTMHMMoveId = RandomizeTMHM(itemId, itemTMHMMoveId);
-        #endif
-
-        return gTypesInfo[GetMoveType(itemTMHMMoveId)].paletteTMHM;
-    }
+        return gTypesInfo[GetMoveType(GetItemTMHMMoveId(itemId))].paletteTMHM;
 
     return gItemsInfo[itemId].iconPalette;
 }
