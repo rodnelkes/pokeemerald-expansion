@@ -5,6 +5,7 @@
 
 static const u16 sRandomizerAbilityWhitelist[] =
 {
+    // ABILITY_NONE,
     ABILITY_STENCH,
     ABILITY_DRIZZLE,
     ABILITY_SPEED_BOOST,
