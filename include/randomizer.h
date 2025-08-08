@@ -44,6 +44,8 @@ enum RandomizerFeature
     RANDOMIZE_ABILITIES,
     // Randomization of TMs and HMs.
     RANDOMIZE_TMS_AND_HMS,
+    // Randomization of berries.
+    RANDOMIZE_BERRIES,
 };
 
 enum RandomizerReason
@@ -59,6 +61,7 @@ enum RandomizerReason
     RANDOMIZER_REASON_EGG,
     RANDOMIZER_REASON_ABILITIES,
     RANDOMIZER_REASON_TMS_AND_HMS,
+    RANDOMIZER_REASON_BERRIES,
 };
 
 enum RandomizerOption {
@@ -134,6 +137,9 @@ u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility);
 
 // Given an existing TM or HM, returns a random replacement for that move.
 u16 RandomizeTMHM(u16 itemId, u16 moveId);
+
+// Given an existing berry tree, returns a random berry for that tree.
+struct RandomBerry RandomizeBerry(struct RandomBerry berry, u8 mapNum, u8 mapGroup, u8 localId);
 
 static inline bool32 GroupSetsIntersect(struct RandomizerGroupSet* originalCache, struct RandomizerGroupSet* targetCache)
 {

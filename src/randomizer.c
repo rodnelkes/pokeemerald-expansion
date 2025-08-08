@@ -1,6 +1,7 @@
 #include "randomizer.h"
 
 #if RANDOMIZER_AVAILABLE == TRUE
+#include "berry.h"
 #include "main.h"
 #include "new_game.h"
 #include "item.h"
@@ -15,6 +16,7 @@
 #include "constants/abilities.h"
 #include "data/randomizer/move_whitelist.h"
 #include "data/randomizer/item_whitelist.h"
+#include "data/randomizer/berry_whitelist.h"
 
 // Add the mons you wish to be randomized when given as starter/gift mon to this list
 const u16 gStarterAndGiftMonTable[STARTER_AND_GIFT_MON_COUNT] =
@@ -111,6 +113,12 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
                 return FORCE_RANDOMIZE_TMS_AND_HMS;
             #else
                 return FlagGet(RANDOMIZER_FLAG_TMS_AND_HMS);
+            #endif
+        case RANDOMIZE_BERRIES:
+            #ifdef FORCE_RANDOMIZE_BERRIES
+                return FORCE_RANDOMIZE_BERRIES;
+            #else
+                return FlagGet(RANDOMIZER_FLAG_BERRIES);
             #endif
         default:
             return FALSE;
@@ -981,6 +989,36 @@ u16 RandomizeTMHM(u16 itemId, u16 moveId)
     }
 
     return moveId;
+}
+
+#define BERRY_COUNTS_SIZE 6
+// Given an existing berry tree, returns a random berry for that tree.
+struct RandomBerry RandomizeBerry(struct RandomBerry berry, u8 mapNum, u8 mapGroup, u8 localId)
+{
+    if (RandomizerFeatureEnabled(RANDOMIZE_BERRIES))
+    {
+        struct RandomBerry result;
+        u64 seed;
+
+        u8 counts[BERRY_COUNTS_SIZE] = {1, 2, 3, 4, 5, 6};
+
+        seed = ((u64) mapGroup) << 48;
+        seed |= ((u64) mapNum) << 40;
+        seed |= ((u64) localId) << 32;
+        seed |= ((u64) berry.itemId) << 16;
+        seed |= ((u64) berry.count) << 8;
+        seed |= (u64) GetRandomizerSeed();
+
+        u16 newBerry = (u16) Permute(berry.itemId, BERRY_WHITELIST_SIZE, seed);
+        u8 newCount = (u8) Permute(berry.count, BERRY_COUNTS_SIZE, seed);
+
+        result.itemId = sRandomizerBerryWhitelist[newBerry];
+        result.count = counts[newCount];
+
+        return result;
+    }
+
+    return berry;
 }
 
 #endif // RANDOMIZER_AVAILABLE

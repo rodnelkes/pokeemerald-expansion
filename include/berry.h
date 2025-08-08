@@ -36,4 +36,9 @@ struct BerryCrushBerryData {
 
 extern const struct BerryCrushBerryData gBerryCrush_BerryData[];
 
+struct RandomBerry {
+    u16 itemId;
+    u8 count;
+};
+
 #endif // GUARD_BERRY_H
