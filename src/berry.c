@@ -2136,24 +2136,30 @@ bool8 CanWaterBerryPlot(void)
 void ObjectEventInteractionGetBerryTreeData(void)
 {
     u8 id;
-    u8 berry;
+    u8 berryType;
     u8 localId;
     u8 group;
     u8 num;
 
     id = GetObjectEventBerryTreeId(gSelectedObjectEvent);
-    berry = GetBerryTypeByBerryTreeId(id);
+    berryType = GetBerryTypeByBerryTreeId(id);
+    struct RandomBerry berry = { BerryTypeToItemId(berryType), GetBerryCountByBerryTreeId(id) };
     AllowBerryTreeGrowth(id);
     localId = gSpecialVar_LastTalked;
     num = gSaveBlock1Ptr->location.mapNum;
     group = gSaveBlock1Ptr->location.mapGroup;
+
+    #if (RANDOMIZER_AVAILABLE)
+        berry = RandomizeBerry(berry, num, group, localId);
+    #endif
+
     if (IsBerryTreeSparkling(localId, num, group))
         gSpecialVar_0x8004 = BERRY_STAGE_SPARKLING;
     else
         gSpecialVar_0x8004 = GetStageByBerryTreeId(id);
     gSpecialVar_0x8005 = GetNumStagesWateredByBerryTreeId(id);
-    gSpecialVar_0x8006 = GetBerryCountByBerryTreeId(id);
-    CopyItemNameHandlePlural(BerryTypeToItemId(berry), gStringVar1, gSpecialVar_0x8006);
+    gSpecialVar_0x8006 = berry.count;
+    CopyItemNameHandlePlural(berry.itemId, gStringVar1, gSpecialVar_0x8006);
 }
 
 void ObjectEventInteractionGetBerryName(void)
@@ -2165,21 +2171,29 @@ void ObjectEventInteractionGetBerryName(void)
 void ObjectEventInteractionGetBerryCountString(void)
 {
     u8 treeId = GetObjectEventBerryTreeId(gSelectedObjectEvent);
-    u8 berry = GetBerryTypeByBerryTreeId(treeId);
-    u8 count = GetBerryCountByBerryTreeId(treeId);
+    u8 berryType = GetBerryTypeByBerryTreeId(treeId);
+    struct RandomBerry berry = { BerryTypeToItemId(berryType), GetBerryCountByBerryTreeId(treeId) };
 
     // The strings for growing Berries all refer to a singular berry plant.
     // This ensures that text about planting a Berry and the growing Berry reads correctly.
     if (GetStageByBerryTreeId(treeId) != BERRY_STAGE_BERRIES)
-        count = 1;
+        berry.count = 1;
 
-    gSpecialVar_0x8006 = BerryTypeToItemId(berry);
-    CopyItemNameHandlePlural(BerryTypeToItemId(berry), gStringVar1, count);
-    berry = GetTreeMutationValue(treeId);
-    if (berry > 0)
+    #if (RANDOMIZER_AVAILABLE)
+        u8 mapNum = gSaveBlock1Ptr->location.mapNum;
+        u8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+        u8 localId = gSpecialVar_LastTalked;
+
+        berry = RandomizeBerry(berry, mapNum, mapGroup, localId);
+    #endif
+
+    gSpecialVar_0x8006 = berry.itemId;
+    CopyItemNameHandlePlural(berry.itemId, gStringVar1, berry.count);
+    berryType = GetTreeMutationValue(treeId);
+    if (berryType > 0)
     {
-        count = 1;
-        CopyItemNameHandlePlural(BerryTypeToItemId(berry), gStringVar3, count);
+        berry.count = 1;
+        CopyItemNameHandlePlural(berry.itemId, gStringVar3, berry.count);
         gSpecialVar_Result = TRUE;
     }
     else
@@ -2215,19 +2229,39 @@ void ObjectEventInteractionApplyMulch(void)
 void ObjectEventInteractionPickBerryTree(void)
 {
     u8 id = GetObjectEventBerryTreeId(gSelectedObjectEvent);
-    u8 berry = GetBerryTypeByBerryTreeId(id);
-    u8 mutation = GetTreeMutationValue(id);
+    u8 berryType = GetBerryTypeByBerryTreeId(id);
+    u8 mutationValue = GetTreeMutationValue(id);
 
-    if (!OW_BERRY_MUTATIONS || mutation == 0)
+    struct RandomBerry berry;
+    berry.itemId = BerryTypeToItemId(berryType);
+    berry.count = GetBerryCountByBerryTreeId(id);
+
+    struct RandomBerry mutatedBerry;
+    mutatedBerry.itemId = BerryTypeToItemId(mutationValue);
+    mutatedBerry.count = 1;
+
+    #if (RANDOMIZER_AVAILABLE)
+        u8 mapNum = gSaveBlock1Ptr->location.mapNum;
+        u8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+        u8 localId = gSpecialVar_LastTalked;
+
+        berry = RandomizeBerry(berry, mapNum, mapGroup, localId);
+    #endif
+
+    if (!OW_BERRY_MUTATIONS || mutationValue == 0)
     {
-        gSpecialVar_0x8004 = AddBagItem(BerryTypeToItemId(berry), GetBerryCountByBerryTreeId(id));
+        gSpecialVar_0x8004 = AddBagItem(berry.itemId, berry.count);
         return;
     }
-    gSpecialVar_0x8004 = (CheckBagHasSpace(BerryTypeToItemId(berry), GetBerryCountByBerryTreeId(id)) && CheckBagHasSpace(BerryTypeToItemId(mutation), 1)) + 2;
+    gSpecialVar_0x8004 = (CheckBagHasSpace(berry.itemId, berry.count) && CheckBagHasSpace(mutatedBerry.itemId, mutatedBerry.count)) + 2;
     if (gSpecialVar_0x8004 == 3)
     {
-        AddBagItem(BerryTypeToItemId(berry), GetBerryCountByBerryTreeId(id));
-        AddBagItem(BerryTypeToItemId(mutation), 1);
+        #if (RANDOMIZER_AVAILABLE)
+            mutatedBerry = RandomizeBerry(mutatedBerry, mapNum, mapGroup, localId);
+        #endif
+
+        AddBagItem(berry.itemId, berry.count);
+        AddBagItem(mutatedBerry.itemId, mutatedBerry.count);
     }
 }
 
