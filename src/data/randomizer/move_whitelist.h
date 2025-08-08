@@ -940,4 +940,4 @@ static const u16 sRandomizerMoveWhitelist[] =
     // MOVE_G_MAX_RAPID_FLOW,
 };
 
-#define Move_WHITELIST_SIZE     (NELEMS(sRandomizerMoveWhitelist))
+#define MOVE_WHITELIST_SIZE     (NELEMS(sRandomizerMoveWhitelist))

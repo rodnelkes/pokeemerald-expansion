@@ -1012,7 +1012,7 @@ u16 RandomizeTMHM(u16 itemId, u16 moveId)
         seed = ((u32) moveId << 8);
         seed |= GetRandomizerSeed();
 
-        u16 newMove = (u16) Permute(itemId - ITEM_TM01, Move_WHITELIST_SIZE, seed);
+        u16 newMove = (u16) Permute(itemId - ITEM_TM01, MOVE_WHITELIST_SIZE, seed);
         result = sRandomizerMoveWhitelist[newMove];
 
         return result;
