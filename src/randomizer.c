@@ -14,6 +14,7 @@
 #include "data/randomizer/ability_whitelist.h"
 #include "constants/abilities.h"
 #include "data/randomizer/move_whitelist.h"
+#include "data/randomizer/item_whitelist.h"
 
 // Add the mons you wish to be randomized when given as starter/gift mon to this list
 const u16 gStarterAndGiftMonTable[STARTER_AND_GIFT_MON_COUNT] =
@@ -248,61 +249,22 @@ u16 RandomizerRandRange(enum RandomizerReason reason, u32 data1, u32 data2, u16 
     return RandomizerNextRange(&state, range);
 }
 
-// Utility functions for the field item randomizer.
-static inline bool32 IsItemTMHM(u16 itemId)
-{
-    return GetItemPocket(itemId) == POCKET_TM_HM;
-}
-
-static inline bool32 IsItemHM(u16 itemId)
-{
-    return itemId >= ITEM_HM01 && IsItemTMHM(itemId);
-}
-
-static inline bool32 IsKeyItem(u16 itemId)
-{
-    return GetItemPocket(itemId) == POCKET_KEY_ITEMS;
-}
-
-// Don't randomize HMs or key items, that can make the game unwinnable.
-// ITEM_NONE also should not be randomized as it is invalid.
-static inline bool32 ShouldRandomizeItem(u16 itemId)
-{
-    return !(IsItemHM(itemId) || IsKeyItem(itemId) || itemId == ITEM_NONE);
-}
-
-#include "data/randomizer/item_whitelist.h"
-
 // Given a found item and its location in the game, returns a replacement for that item.
 u16 RandomizeFoundItem(u16 itemId, u8 mapNum, u8 mapGroup, u8 localId)
 {
-    struct Sfc32State state;
     u16 result;
-    u32 mapSeed;
+    u64 seed;
 
-    if (!ShouldRandomizeItem(itemId))
-        return itemId;
+    seed = ((u64) mapGroup) << 40;
+    seed |= ((u64) mapNum) << 32;
+    seed |= ((u64) localId) << 24;
+    seed |= ((u64) itemId) << 8;
+    seed |= GetRandomizerSeed();
 
-    // Seed the generator using the original item and the object event that led up
-    // to this call.
-    mapSeed = ((u32)mapGroup) << 16;
-    mapSeed |= ((u32)mapNum) << 8;
-    mapSeed |= localId;
-
-    state = RandomizerRandSeed(RANDOMIZER_REASON_FIELD_ITEM, mapSeed, itemId);
-
-    // Randomize TMs to TMs. Because HMs shouldn't be randomized, we can assume
-    // this is a TM.
-    if (IsItemTMHM(itemId))
-        return RandomizerNextRange(&state, RANDOMIZER_MAX_TM - ITEM_TM01 + 1) + ITEM_TM01;
-
-    // Randomize everything else to everything else.
-    do {
-        result = sRandomizerItemWhitelist[RandomizerNextRange(&state, ITEM_WHITELIST_SIZE)];
-    } while(!ShouldRandomizeItem(result) || IsItemTMHM(result));
+    u16 newItem = (u16) Permute(itemId, ITEM_WHITELIST_SIZE, seed);
+    result = sRandomizerItemWhitelist[newItem];
 
     return result;
-
 }
 
 // Takes a SpecialVar as an argument to simplify handling separate scripts.
