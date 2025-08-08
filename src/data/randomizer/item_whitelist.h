@@ -1,5 +1,4 @@
 #include "global.h"
-#include "item.h"
 
 // Randomizer item whitelist
 // Lifted initially from TheXaman's tx_randomizer_and_challenges_branch
