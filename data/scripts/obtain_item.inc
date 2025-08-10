@@ -179,7 +179,7 @@ EventScript_HiddenItemScript::
 	lockall
 	waitse
 	#if RANDOMIZER_AVAILABLE == TRUE
-	callnative FindHiddenItemRandomize_NativeCall
+	callnative HiddenItemRandomize_NativeCall
 	#endif
 	copyvar VAR_0x8006, VAR_0x8005
 	additem VAR_0x8005

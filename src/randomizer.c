@@ -308,7 +308,7 @@ void FindItemRandomize_NativeCall(struct ScriptContext *ctx)
     RandomizeItemScript(&gSpecialVar_0x8000);
 }
 
-void FindHiddenItemRandomize_NativeCall(struct ScriptContext *ctx)
+void HiddenItemRandomize_NativeCall(struct ScriptContext *ctx)
 {
     RandomizeItemScript(&gSpecialVar_0x8005);
 }
