@@ -113,7 +113,7 @@ static inline u8 RandomizeMonType(u16 species, u8 typeNum)
     return (u8)RandomizerRandRange(RANDOMIZER_REASON_SPECIES_TYPE, species, typeNum, NUMBER_OF_MON_TYPES);
 }
 
-struct RandomItem RandomizeItem(struct RandomItem item, u8 mapNum, u8 mapGroup, u8 localId);
+struct RandomItem RandomizeItem(struct RandomItem item);
 void FindItemRandomize_NativeCall(struct ScriptContext *ctx);
 void FindHiddenItemRandomize_NativeCall(struct ScriptContext *ctx);
 
@@ -143,7 +143,7 @@ u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility);
 u16 RandomizeTMHM(u16 itemId, u16 moveId);
 
 // Given an existing berry tree, returns a random berry for that tree.
-struct RandomItem RandomizeBerry(struct RandomItem berry, u8 mapNum, u8 mapGroup, u8 localId);
+struct RandomItem RandomizeBerry(struct RandomItem berry);
 
 static inline bool32 GroupSetsIntersect(struct RandomizerGroupSet* originalCache, struct RandomizerGroupSet* targetCache)
 {

@@ -258,19 +258,32 @@ u16 RandomizerRandRange(enum RandomizerReason reason, u32 data1, u32 data2, u16 
 }
 
 // Given a found item and its location in the game, returns a replacement for that item.
-struct RandomItem RandomizeFoundItem(struct RandomItem item, u8 mapNum, u8 mapGroup, u8 localId)
+struct RandomItem RandomizeItem(struct RandomItem item)
 {
+    struct Sfc32State state;
     struct RandomItem result;
     u64 seed;
+    u32 seedA, seedB;
+    u16 newIdx;
 
-    seed = ((u64) RANDOMIZER_REASON_FIELD_ITEM) << 48;
-    seed |= ((u64) mapNum) << 40;
-    seed |= ((u64) mapGroup) << 32;
-    seed |= ((u64) localId) << 24;
+    if (GetItemPocket(item.itemId) == POCKET_KEY_ITEMS)
+        return item;
+
+    seed = ((u64) RANDOMIZER_REASON_FIELD_ITEM) << 56;
+    seed |= ((u64) gObjectEvents[gSelectedObjectEvent].mapNum) << 48;
+    seed |= ((u64) gObjectEvents[gSelectedObjectEvent].mapGroup) << 40;
+    seed |= ((u64) gObjectEvents[gSelectedObjectEvent].localId) << 32;
+    seed |= ((u64) item.quantity) << 24;
     seed |= ((u64) item.itemId) << 8;
     seed |= GetRandomizerSeed();
 
-    u16 newItem = (u16) Permute(item.itemId, ITEM_WHITELIST_SIZE, seed);
+    seedA = (u32) (seed >> 32);
+    seedB = (u32) (seed << 32 >> 32);
+
+    state = RandomizerRandSeed(RANDOMIZER_REASON_FIELD_ITEM, seedA, seedB);
+    newIdx = RandomizerNextRange(&state, ITEM_WHITELIST_SIZE);
+
+    u16 newItem = (u16) Permute(newIdx, ITEM_WHITELIST_SIZE, seed);
     result.itemId = sRandomizerItemWhitelist[newItem];
     result.quantity = item.quantity;
 
@@ -283,11 +296,7 @@ static inline void RandomizeItemScript(u16 *itemIdVar)
     if (RandomizerFeatureEnabled(RANDOMIZE_FIELD_ITEMS))
     {
         struct RandomItem newRandomItem = { *itemIdVar, gSpecialVar_0x8001 };
-        u8 objEvent = gSelectedObjectEvent;
-        u16 newItemId = RandomizeItem(newRandomItem,
-            gObjectEvents[objEvent].mapNum,
-            gObjectEvents[objEvent].mapGroup,
-            gObjectEvents[objEvent].localId).itemId;
+        u16 newItemId = RandomizeItem(newRandomItem).itemId;
         *itemIdVar = newItemId;
     }
 }
@@ -996,7 +1005,7 @@ u16 RandomizeTMHM(u16 itemId, u16 moveId)
 
 #define BERRY_COUNTS_SIZE 6
 // Given an existing berry tree, returns a random berry for that tree.
-struct RandomItem RandomizeBerry(struct RandomItem berry, u8 mapNum, u8 mapGroup, u8 localId)
+struct RandomItem RandomizeBerry(struct RandomItem berry)
 {
     if (RandomizerFeatureEnabled(RANDOMIZE_BERRIES))
     {
@@ -1006,9 +1015,9 @@ struct RandomItem RandomizeBerry(struct RandomItem berry, u8 mapNum, u8 mapGroup
         u8 counts[BERRY_COUNTS_SIZE] = {1, 2, 3, 4, 5, 6};
 
         seed = ((u64) RANDOMIZER_REASON_BERRIES) << 56;
-        seed |= ((u64) mapNum) << 48;
-        seed |= ((u64) mapGroup) << 40;
-        seed |= ((u64) localId) << 32;
+        seed |= ((u64) gObjectEvents[gSelectedObjectEvent].mapNum) << 48;
+        seed |= ((u64) gObjectEvents[gSelectedObjectEvent].mapGroup) << 40;
+        seed |= ((u64) gSpecialVar_LastTalked) << 32;
         seed |= ((u64) berry.itemId) << 16;
         seed |= ((u64) berry.quantity) << 8;
         seed |= (u64) GetRandomizerSeed();
@@ -1021,8 +1030,6 @@ struct RandomItem RandomizeBerry(struct RandomItem berry, u8 mapNum, u8 mapGroup
 
         return result;
     }
-
-    return berry;
 }
 
 #endif // RANDOMIZER_AVAILABLE
