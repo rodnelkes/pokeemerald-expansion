@@ -2310,9 +2310,10 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
         return FALSE;
 
     move = FieldMove_GetMoveId(fieldMove);
+    u16 species;
     for (u32 i = 0; i < PARTY_SIZE; i++)
     {
-        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
         if (!species)
             break;
         if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], move) == TRUE)
@@ -2322,6 +2323,28 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
             break;
         }
     }
+
+    if (RANDOMIZE_TMS_AND_HMS)
+        switch (fieldMove) {
+            case FIELD_MOVE_CUT:
+            case FIELD_MOVE_FLY:
+            case FIELD_MOVE_SURF:
+            case FIELD_MOVE_STRENGTH:
+            case FIELD_MOVE_FLASH:
+            case FIELD_MOVE_ROCK_SMASH:
+            case FIELD_MOVE_WATERFALL:
+            case FIELD_MOVE_DIVE:
+                species = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL);
+
+                if (species)
+                {
+                    gSpecialVar_Result = 0;
+                    gSpecialVar_0x8004 = species;
+                }
+                break;
+            default:
+                break;
+        }
 
     return FALSE;
 }
