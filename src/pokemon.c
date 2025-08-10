@@ -1026,12 +1026,45 @@ void ZeroEnemyPartyMons(void)
         ZeroMonData(&gEnemyParty[i]);
 }
 
+// Linear formula where level 5 has 1 mult and 46 has (100/46) mult, pushing it to level 100.
+extern uq4_12_t GetLevelMultiplier(u8 level)
+{
+    f64 result;
+
+    f64 slope = 27.0 / 943.0;
+    f64 yIntercept = 808.0 / 943.0;
+    result = (slope * (f64) level) + yIntercept; // y = (27/943)x + (808/943)
+
+    return UQ_4_12(result);
+}
+
+extern u8 GetLevelAfterMultiplier(u8 level)
+{
+    u8 newLevel = level;
+
+    // Egg mon should stay at 1
+    if (newLevel == 1)
+        return newLevel;
+
+    // Set min level to 5
+    if (newLevel < 5)
+        newLevel = 5;
+
+    uq4_12_t multiplier = GetLevelMultiplier(newLevel);
+    newLevel = (u8) uq4_12_multiply_by_int_half_up(multiplier, newLevel);
+    newLevel = min(newLevel, 100);
+
+    return newLevel;
+}
+
 void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId)
 {
+    u8 newLevel = GetLevelAfterMultiplier(level);
+
     u32 mail;
     ZeroMonData(mon);
-    CreateBoxMon(&mon->box, species, level, fixedIV, hasFixedPersonality, fixedPersonality, otIdType, fixedOtId);
-    SetMonData(mon, MON_DATA_LEVEL, &level);
+    CreateBoxMon(&mon->box, species, newLevel, fixedIV, hasFixedPersonality, fixedPersonality, otIdType, fixedOtId);
+    SetMonData(mon, MON_DATA_LEVEL, &newLevel);
     mail = MAIL_NONE;
     SetMonData(mon, MON_DATA_MAIL, &mail);
     CalculateMonStats(mon);

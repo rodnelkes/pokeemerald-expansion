@@ -27,7 +27,7 @@ u32 GetCurrentLevelCap(void)
         for (i = 0; i < ARRAY_COUNT(sLevelCapFlagMap); i++)
         {
             if (!FlagGet(sLevelCapFlagMap[i][0]))
-                return sLevelCapFlagMap[i][1];
+                return GetLevelAfterMultiplier(sLevelCapFlagMap[i][1]);
         }
     }
     else if (B_LEVEL_CAP_TYPE == LEVEL_CAP_VARIABLE)
