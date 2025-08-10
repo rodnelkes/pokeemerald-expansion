@@ -264,7 +264,7 @@ struct RandomItem RandomizeItem(struct RandomItem item)
     struct RandomItem result;
     u64 seed;
     u32 seedA, seedB;
-    u16 newIdx;
+    u16 idx;
 
     if (GetItemPocket(item.itemId) == POCKET_KEY_ITEMS)
         return item;
@@ -279,12 +279,11 @@ struct RandomItem RandomizeItem(struct RandomItem item)
 
     seedA = (u32) (seed >> 32);
     seedB = (u32) (seed << 32 >> 32);
-
     state = RandomizerRandSeed(RANDOMIZER_REASON_FIELD_ITEM, seedA, seedB);
-    newIdx = RandomizerNextRange(&state, ITEM_WHITELIST_SIZE);
+    idx = RandomizerNextRange(&state, ITEM_WHITELIST_SIZE);
 
-    u16 newItem = (u16) Permute(newIdx, ITEM_WHITELIST_SIZE, seed);
-    result.itemId = sRandomizerItemWhitelist[newItem];
+    u16 newItemId = (u16) Permute(idx, ITEM_WHITELIST_SIZE, seed);
+    result.itemId = sRandomizerItemWhitelist[newItemId];
     result.quantity = item.quantity;
 
     return result;
