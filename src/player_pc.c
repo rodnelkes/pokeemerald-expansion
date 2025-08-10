@@ -371,11 +371,11 @@ void NewGameInitPCItems(void)
     u8 i = 0;
     CpuFastFill(0, gSaveBlock1Ptr->pcItems, sizeof(gSaveBlock1Ptr->pcItems));
 
-    struct RandomItem pcItem = { sNewGamePCItems[0][0], sNewGamePCItems[0][1] };
-    pcItem = RandomizeItem(pcItem);
-
     while (TRUE)
     {
+        struct RandomItem pcItem = { sNewGamePCItems[i][0], sNewGamePCItems[i][1] };
+        pcItem = RandomizeItem(pcItem);
+
         if (pcItem.itemId == ITEM_NONE || pcItem.quantity == 0)
             break;
         if (AddPCItem(pcItem.itemId, pcItem.quantity) != TRUE)
