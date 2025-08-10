@@ -258,36 +258,37 @@ u16 RandomizerRandRange(enum RandomizerReason reason, u32 data1, u32 data2, u16 
 }
 
 // Given a found item and its location in the game, returns a replacement for that item.
-u16 RandomizeFoundItem(u16 itemId, u8 mapNum, u8 mapGroup, u8 localId)
+struct RandomItem RandomizeFoundItem(struct RandomItem item, u8 mapNum, u8 mapGroup, u8 localId)
 {
-    u16 result;
+    struct RandomItem result;
     u64 seed;
 
     seed = ((u64) RANDOMIZER_REASON_FIELD_ITEM) << 48;
     seed |= ((u64) mapNum) << 40;
     seed |= ((u64) mapGroup) << 32;
     seed |= ((u64) localId) << 24;
-    seed |= ((u64) itemId) << 8;
+    seed |= ((u64) item.itemId) << 8;
     seed |= GetRandomizerSeed();
 
-    u16 newItem = (u16) Permute(itemId, ITEM_WHITELIST_SIZE, seed);
-    result = sRandomizerItemWhitelist[newItem];
+    u16 newItem = (u16) Permute(item.itemId, ITEM_WHITELIST_SIZE, seed);
+    result.itemId = sRandomizerItemWhitelist[newItem];
+    result.quantity = item.quantity;
 
     return result;
 }
 
 // Takes a SpecialVar as an argument to simplify handling separate scripts.
-static inline void RandomizeFoundItemScript(u16 *scriptVar)
+static inline void RandomizeItemScript(u16 *itemIdVar)
 {
     if (RandomizerFeatureEnabled(RANDOMIZE_FIELD_ITEMS))
     {
-        // Pull the object event information from the current object event.
+        struct RandomItem newRandomItem = { *itemIdVar, gSpecialVar_0x8001 };
         u8 objEvent = gSelectedObjectEvent;
-        *scriptVar = RandomizeFoundItem(
-            *scriptVar,
-            gObjectEvents[objEvent].mapGroup,
+        u16 newItemId = RandomizeItem(newRandomItem,
             gObjectEvents[objEvent].mapNum,
-            gObjectEvents[objEvent].localId);
+            gObjectEvents[objEvent].mapGroup,
+            gObjectEvents[objEvent].localId).itemId;
+        *itemIdVar = newItemId;
     }
 }
 
@@ -295,12 +296,12 @@ static inline void RandomizeFoundItemScript(u16 *scriptVar)
 // write the results of the randomization to the correct script variable.
 void FindItemRandomize_NativeCall(struct ScriptContext *ctx)
 {
-    RandomizeFoundItemScript(&gSpecialVar_0x8000);
+    RandomizeItemScript(&gSpecialVar_0x8000);
 }
 
 void FindHiddenItemRandomize_NativeCall(struct ScriptContext *ctx)
 {
-    RandomizeFoundItemScript(&gSpecialVar_0x8005);
+    RandomizeItemScript(&gSpecialVar_0x8005);
 }
 
 // Both legendary and mythical Pokémon are included in this category.
@@ -995,11 +996,11 @@ u16 RandomizeTMHM(u16 itemId, u16 moveId)
 
 #define BERRY_COUNTS_SIZE 6
 // Given an existing berry tree, returns a random berry for that tree.
-struct RandomBerry RandomizeBerry(struct RandomBerry berry, u8 mapNum, u8 mapGroup, u8 localId)
+struct RandomItem RandomizeBerry(struct RandomItem berry, u8 mapNum, u8 mapGroup, u8 localId)
 {
     if (RandomizerFeatureEnabled(RANDOMIZE_BERRIES))
     {
-        struct RandomBerry result;
+        struct RandomItem result;
         u64 seed;
 
         u8 counts[BERRY_COUNTS_SIZE] = {1, 2, 3, 4, 5, 6};
@@ -1009,14 +1010,14 @@ struct RandomBerry RandomizeBerry(struct RandomBerry berry, u8 mapNum, u8 mapGro
         seed |= ((u64) mapGroup) << 40;
         seed |= ((u64) localId) << 32;
         seed |= ((u64) berry.itemId) << 16;
-        seed |= ((u64) berry.count) << 8;
+        seed |= ((u64) berry.quantity) << 8;
         seed |= (u64) GetRandomizerSeed();
 
         u16 newBerry = (u16) Permute(berry.itemId, BERRY_WHITELIST_SIZE, seed);
-        u8 newCount = (u8) Permute(berry.count, BERRY_COUNTS_SIZE, seed);
+        u8 newCount = (u8) Permute(berry.quantity, BERRY_COUNTS_SIZE, seed);
 
         result.itemId = sRandomizerBerryWhitelist[newBerry];
-        result.count = counts[newCount];
+        result.quantity = counts[newCount];
 
         return result;
     }

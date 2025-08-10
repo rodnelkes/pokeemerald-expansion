@@ -2143,7 +2143,7 @@ void ObjectEventInteractionGetBerryTreeData(void)
 
     id = GetObjectEventBerryTreeId(gSelectedObjectEvent);
     berryType = GetBerryTypeByBerryTreeId(id);
-    struct RandomBerry berry = { BerryTypeToItemId(berryType), GetBerryCountByBerryTreeId(id) };
+    struct RandomItem berry = { BerryTypeToItemId(berryType), GetBerryCountByBerryTreeId(id) };
     AllowBerryTreeGrowth(id);
     localId = gSpecialVar_LastTalked;
     num = gSaveBlock1Ptr->location.mapNum;
@@ -2158,7 +2158,7 @@ void ObjectEventInteractionGetBerryTreeData(void)
     else
         gSpecialVar_0x8004 = GetStageByBerryTreeId(id);
     gSpecialVar_0x8005 = GetNumStagesWateredByBerryTreeId(id);
-    gSpecialVar_0x8006 = berry.count;
+    gSpecialVar_0x8006 = berry.quantity;
     CopyItemNameHandlePlural(berry.itemId, gStringVar1, gSpecialVar_0x8006);
 }
 
@@ -2172,12 +2172,12 @@ void ObjectEventInteractionGetBerryCountString(void)
 {
     u8 treeId = GetObjectEventBerryTreeId(gSelectedObjectEvent);
     u8 berryType = GetBerryTypeByBerryTreeId(treeId);
-    struct RandomBerry berry = { BerryTypeToItemId(berryType), GetBerryCountByBerryTreeId(treeId) };
+    struct RandomItem berry = { BerryTypeToItemId(berryType), GetBerryCountByBerryTreeId(treeId) };
 
     // The strings for growing Berries all refer to a singular berry plant.
     // This ensures that text about planting a Berry and the growing Berry reads correctly.
     if (GetStageByBerryTreeId(treeId) != BERRY_STAGE_BERRIES)
-        berry.count = 1;
+        berry.quantity = 1;
 
     #if (RANDOMIZER_AVAILABLE)
         u8 mapNum = gSaveBlock1Ptr->location.mapNum;
@@ -2188,12 +2188,12 @@ void ObjectEventInteractionGetBerryCountString(void)
     #endif
 
     gSpecialVar_0x8006 = berry.itemId;
-    CopyItemNameHandlePlural(berry.itemId, gStringVar1, berry.count);
+    CopyItemNameHandlePlural(berry.itemId, gStringVar1, berry.quantity);
     berryType = GetTreeMutationValue(treeId);
     if (berryType > 0)
     {
-        berry.count = 1;
-        CopyItemNameHandlePlural(berry.itemId, gStringVar3, berry.count);
+        berry.quantity = 1;
+        CopyItemNameHandlePlural(berry.itemId, gStringVar3, berry.quantity);
         gSpecialVar_Result = TRUE;
     }
     else
@@ -2232,13 +2232,13 @@ void ObjectEventInteractionPickBerryTree(void)
     u8 berryType = GetBerryTypeByBerryTreeId(id);
     u8 mutationValue = GetTreeMutationValue(id);
 
-    struct RandomBerry berry;
+    struct RandomItem berry;
     berry.itemId = BerryTypeToItemId(berryType);
-    berry.count = GetBerryCountByBerryTreeId(id);
+    berry.quantity = GetBerryCountByBerryTreeId(id);
 
-    struct RandomBerry mutatedBerry;
+    struct RandomItem mutatedBerry;
     mutatedBerry.itemId = BerryTypeToItemId(mutationValue);
-    mutatedBerry.count = 1;
+    mutatedBerry.quantity = 1;
 
     #if (RANDOMIZER_AVAILABLE)
         u8 mapNum = gSaveBlock1Ptr->location.mapNum;
@@ -2250,18 +2250,18 @@ void ObjectEventInteractionPickBerryTree(void)
 
     if (!OW_BERRY_MUTATIONS || mutationValue == 0)
     {
-        gSpecialVar_0x8004 = AddBagItem(berry.itemId, berry.count);
+        gSpecialVar_0x8004 = AddBagItem(berry.itemId, berry.quantity);
         return;
     }
-    gSpecialVar_0x8004 = (CheckBagHasSpace(berry.itemId, berry.count) && CheckBagHasSpace(mutatedBerry.itemId, mutatedBerry.count)) + 2;
+    gSpecialVar_0x8004 = (CheckBagHasSpace(berry.itemId, berry.quantity) && CheckBagHasSpace(mutatedBerry.itemId, mutatedBerry.quantity)) + 2;
     if (gSpecialVar_0x8004 == 3)
     {
         #if (RANDOMIZER_AVAILABLE)
             mutatedBerry = RandomizeBerry(mutatedBerry, mapNum, mapGroup, localId);
         #endif
 
-        AddBagItem(berry.itemId, berry.count);
-        AddBagItem(mutatedBerry.itemId, mutatedBerry.count);
+        AddBagItem(berry.itemId, berry.quantity);
+        AddBagItem(mutatedBerry.itemId, mutatedBerry.quantity);
     }
 }
 
