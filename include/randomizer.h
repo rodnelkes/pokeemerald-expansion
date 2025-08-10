@@ -114,6 +114,7 @@ static inline u8 RandomizeMonType(u16 species, u8 typeNum)
 }
 
 struct RandomItem RandomizeItem(struct RandomItem item);
+void ObtainItemRandomize_NativeCall(struct ScriptContext *ctx);
 void FindItemRandomize_NativeCall(struct ScriptContext *ctx);
 void HiddenItemRandomize_NativeCall(struct ScriptContext *ctx);
 

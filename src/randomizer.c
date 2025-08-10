@@ -303,6 +303,11 @@ static inline void RandomizeItemScript(u16 *itemIdVar)
 
 // These functions are invoked by the scripts that handle found items and
 // write the results of the randomization to the correct script variable.
+void ObtainItemRandomize_NativeCall(struct ScriptContext *ctx)
+{
+    RandomizeItemScript(&gSpecialVar_0x8000);
+}
+
 void FindItemRandomize_NativeCall(struct ScriptContext *ctx)
 {
     RandomizeItemScript(&gSpecialVar_0x8000);
