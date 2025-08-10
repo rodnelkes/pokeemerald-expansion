@@ -1037,6 +1037,8 @@ struct RandomItem RandomizeBerry(struct RandomItem berry)
 
         return result;
     }
+
+    return berry;
 }
 
 #endif // RANDOMIZER_AVAILABLE
