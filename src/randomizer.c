@@ -1013,10 +1013,10 @@ struct RandomItem RandomizeBerry(struct RandomItem berry)
 {
     if (RandomizerFeatureEnabled(RANDOMIZE_BERRIES))
     {
+        struct Sfc32State state;
         struct RandomItem result;
         u64 seed;
-
-        u8 counts[BERRY_COUNTS_SIZE] = {1, 2, 3, 4, 5, 6};
+        u32 seedA, seedB;
 
         seed = ((u64) RANDOMIZER_REASON_BERRIES) << 56;
         seed |= ((u64) gObjectEvents[gSelectedObjectEvent].mapNum) << 48;
@@ -1026,11 +1026,14 @@ struct RandomItem RandomizeBerry(struct RandomItem berry)
         seed |= ((u64) berry.quantity) << 8;
         seed |= (u64) GetRandomizerSeed();
 
-        u16 newBerry = (u16) Permute(berry.itemId, BERRY_WHITELIST_SIZE, seed);
-        u8 newCount = (u8) Permute(berry.quantity, BERRY_COUNTS_SIZE, seed);
+        seedA = (u32) (seed >> 32);
+        seedB = (u32) (seed << 32 >> 32);
+        state = RandomizerRandSeed(RANDOMIZER_REASON_BERRIES, seedA, seedB);
 
+        u16 newBerry = (u16) Permute(berry.itemId, BERRY_WHITELIST_SIZE, seed);
+        u8 newCount = (u8) RandomizerNextRange(&state, BERRY_COUNTS_SIZE - 1) + 1;
         result.itemId = sRandomizerBerryWhitelist[newBerry];
-        result.quantity = counts[newCount];
+        result.quantity = newCount;
 
         return result;
     }
