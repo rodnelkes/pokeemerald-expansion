@@ -995,7 +995,7 @@ u16 RandomizeTMHM(u16 itemId, u16 moveId)
         u32 seed;
 
         seed = ((u32) RANDOMIZER_REASON_TMS_AND_HMS) << 24;
-        seed |= ((u32) moveId << 8);
+        seed |= ((u32) moveId) << 8;
         seed |= GetRandomizerSeed();
 
         u16 newMove = (u16) Permute(itemId - ITEM_TM01, MOVE_WHITELIST_SIZE, seed);
