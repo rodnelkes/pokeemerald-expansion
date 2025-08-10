@@ -263,8 +263,9 @@ u16 RandomizeFoundItem(u16 itemId, u8 mapNum, u8 mapGroup, u8 localId)
     u16 result;
     u64 seed;
 
-    seed = ((u64) mapGroup) << 40;
-    seed |= ((u64) mapNum) << 32;
+    seed = ((u64) RANDOMIZER_REASON_FIELD_ITEM) << 48;
+    seed |= ((u64) mapNum) << 40;
+    seed |= ((u64) mapGroup) << 32;
     seed |= ((u64) localId) << 24;
     seed |= ((u64) itemId) << 8;
     seed |= GetRandomizerSeed();
@@ -979,7 +980,8 @@ u16 RandomizeTMHM(u16 itemId, u16 moveId)
         u16 result;
         u32 seed;
 
-        seed = ((u32) moveId << 8);
+        seed = ((u32) RANDOMIZER_REASON_TMS_AND_HMS) << 24;
+        seed |= ((u32) moveId << 8);
         seed |= GetRandomizerSeed();
 
         u16 newMove = (u16) Permute(itemId - ITEM_TM01, MOVE_WHITELIST_SIZE, seed);
@@ -1002,8 +1004,9 @@ struct RandomBerry RandomizeBerry(struct RandomBerry berry, u8 mapNum, u8 mapGro
 
         u8 counts[BERRY_COUNTS_SIZE] = {1, 2, 3, 4, 5, 6};
 
-        seed = ((u64) mapGroup) << 48;
-        seed |= ((u64) mapNum) << 40;
+        seed = ((u64) RANDOMIZER_REASON_BERRIES) << 56;
+        seed |= ((u64) mapNum) << 48;
+        seed |= ((u64) mapGroup) << 40;
         seed |= ((u64) localId) << 32;
         seed |= ((u64) berry.itemId) << 16;
         seed |= ((u64) berry.count) << 8;
