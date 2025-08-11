@@ -5098,7 +5098,9 @@ static u16 AddTMTutorMoves(u16 species, u16 movesTotal, u8 *numTMHMMoves, u8 *nu
 #if P_TUTOR_MOVES_ARRAY
     for (i = 0; gTutorMoves[i] != MOVE_UNAVAILABLE; i++)
     {
-        move = gTutorMoves[i];
+#if RANDOMIZER_AVAILABLE
+        move = RandomizeMoveTutor(gTutorMoves[i]);
+#endif
         if (!isTMMove[move] && CanLearnTeachableMove(species, move))
         {
             sStatsMoves[movesTotal] = move;

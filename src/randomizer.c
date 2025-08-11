@@ -114,6 +114,12 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
             #else
                 return FlagGet(RANDOMIZER_FLAG_TMS_AND_HMS);
             #endif
+        case RANDOMIZE_MOVE_TUTORS:
+            #ifdef FORCE_RANDOMIZE_MOVE_TUTORS
+                return FORCE_RANDOMIZE_MOVE_TUTORS;
+            #else
+                return FlagGet(RANDOMIZER_FLAG_MOVE_TUTORS);
+            #endif
         case RANDOMIZE_BERRIES:
             #ifdef FORCE_RANDOMIZE_BERRIES
                 return FORCE_RANDOMIZE_BERRIES;
@@ -994,7 +1000,7 @@ u16 RandomizeTMHM(u16 itemId, u16 moveId)
         u16 result;
         u32 seed;
 
-        seed = ((u32) RANDOMIZER_REASON_TMS_AND_HMS) << 24;
+        seed = ((u32) RANDOMIZER_REASON_MOVES) << 24;
         seed |= ((u32) moveId) << 8;
         seed |= GetRandomizerSeed();
 
@@ -1005,6 +1011,129 @@ u16 RandomizeTMHM(u16 itemId, u16 moveId)
     }
 
     return moveId;
+}
+
+// Given an existing move tutor move, returns a random replacement for that move.
+u16 RandomizeMoveTutor(u16 moveId)
+{
+    u16 result;
+    u32 seed;
+    u8 tutor;
+
+    seed = ((u32) RANDOMIZER_REASON_MOVES) << 24;
+    seed |= ((u32) moveId) << 8;
+    seed |= GetRandomizerSeed();
+
+    switch (moveId)
+    {
+        case MOVE_SWAGGER:
+            tutor = 1;
+            break;
+        case MOVE_ROLLOUT:
+            tutor = 2;
+            break;
+        case MOVE_FURY_CUTTER:
+            tutor = 3;
+            break;
+        case MOVE_MIMIC:
+            tutor = 4;
+            break;
+        case MOVE_METRONOME:
+            tutor = 5;
+            break;
+        case MOVE_SLEEP_TALK:
+            tutor = 6;
+            break;
+        case MOVE_SUBSTITUTE:
+            tutor = 7;
+            break;
+        case MOVE_DYNAMIC_PUNCH:
+            tutor = 8;
+            break;
+        case MOVE_DOUBLE_EDGE:
+            tutor = 9;
+            break;
+        case MOVE_EXPLOSION:
+            tutor = 10;
+            break;
+        case MOVE_SOFT_BOILED:
+            tutor = 11;
+            break;
+        case MOVE_SEISMIC_TOSS:
+            tutor = 12;
+            break;
+        case MOVE_DREAM_EATER:
+            tutor = 13;
+            break;
+        case MOVE_MEGA_PUNCH:
+            tutor = 14;
+            break;
+        case MOVE_MEGA_KICK:
+            tutor = 15;
+            break;
+        case MOVE_BODY_SLAM:
+            tutor = 16;
+            break;
+        case MOVE_ROCK_SLIDE:
+            tutor = 17;
+            break;
+        case MOVE_COUNTER:
+            tutor = 18;
+            break;
+        case MOVE_THUNDER_WAVE:
+            tutor = 19;
+            break;
+        case MOVE_SWORDS_DANCE:
+            tutor = 20;
+            break;
+        case MOVE_DEFENSE_CURL:
+            tutor = 21;
+            break;
+        case MOVE_SNORE:
+            tutor = 22;
+            break;
+        case MOVE_MUD_SLAP:
+            tutor = 23;
+            break;
+        case MOVE_SWIFT:
+            tutor = 24;
+            break;
+        case MOVE_ICY_WIND:
+            tutor = 25;
+            break;
+        case MOVE_ENDURE:
+            tutor = 26;
+            break;
+        case MOVE_PSYCH_UP:
+            tutor = 27;
+            break;
+        case MOVE_ICE_PUNCH:
+            tutor = 28;
+            break;
+        case MOVE_THUNDER_PUNCH:
+            tutor = 29;
+            break;
+        case MOVE_FIRE_PUNCH:
+            tutor = 30;
+            break;
+        default:
+            return moveId;
+    }
+
+    u16 newMove = (u16) Permute(ITEM_HM08 + tutor, MOVE_WHITELIST_SIZE, seed);
+    result = sRandomizerMoveWhitelist[newMove];
+    return result;
+}
+
+static inline void RandomizeMoveTutorScript(u16 *itemIdVar)
+{
+    if (RandomizerFeatureEnabled(RANDOMIZE_MOVE_TUTORS))
+        *itemIdVar = RandomizeMoveTutor(*itemIdVar);
+}
+
+void MoveTutorRandomize_NativeCall(struct ScriptContext *ctx)
+{
+    RandomizeMoveTutorScript(&gSpecialVar_0x8005);
 }
 
 #define BERRY_COUNTS_SIZE 6

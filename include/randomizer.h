@@ -44,6 +44,8 @@ enum RandomizerFeature
     RANDOMIZE_ABILITIES,
     // Randomization of TMs and HMs.
     RANDOMIZE_TMS_AND_HMS,
+    // Randomization of Move Tutor moves.
+    RANDOMIZE_MOVE_TUTORS,
     // Randomization of berries.
     RANDOMIZE_BERRIES,
 };
@@ -60,7 +62,7 @@ enum RandomizerReason
     RANDOMIZER_REASON_STARTER_AND_GIFT_MON,
     RANDOMIZER_REASON_EGG,
     RANDOMIZER_REASON_ABILITIES,
-    RANDOMIZER_REASON_TMS_AND_HMS,
+    RANDOMIZER_REASON_MOVES,
     RANDOMIZER_REASON_BERRIES,
 };
 
@@ -142,6 +144,10 @@ u16 RandomizeAbility(u16 species, u8 abilityNum, u16 originalAbility);
 
 // Given an existing TM or HM, returns a random replacement for that move.
 u16 RandomizeTMHM(u16 itemId, u16 moveId);
+
+// Given an existing move tutor move, returns a random replacement for that move.
+u16 RandomizeMoveTutor(u16 moveId);
+void MoveTutorRandomize_NativeCall(struct ScriptContext *ctx);
 
 // Given an existing berry tree, returns a random berry for that tree.
 struct RandomItem RandomizeBerry(struct RandomItem berry);
