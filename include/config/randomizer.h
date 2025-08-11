@@ -80,7 +80,7 @@
 #endif
 
 #ifndef FORCE_RANDOMIZE_BERRIES
-#define RANDOMIZER_FLAG_BERRIES                       FLAG_UNUSED_0x027
+#define RANDOMIZER_FLAG_BERRIES                       FLAG_UNUSED_0x028
 #endif
 
 #define RANDOMIZER_VAR_SPECIES_MODE                   VAR_RANDOMIZER_SPECIES_MODE
