@@ -5592,6 +5592,11 @@ static const u16 sUniversalMoves[] =
 
 u8 CanLearnTeachableMove(u16 species, u16 move)
 {
+#if RANDOMIZER_AVAILABLE
+    if (RANDOMIZE_TMS_AND_HMS)
+        return TRUE;
+#endif
+
     if (species == SPECIES_EGG)
     {
         return FALSE;
