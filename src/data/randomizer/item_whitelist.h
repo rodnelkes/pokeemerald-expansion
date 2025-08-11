@@ -145,7 +145,9 @@ static const u16 sRandomizerItemWhitelist[] =
     ITEM_SUPER_LURE,
     ITEM_MAX_LURE,
 
+#if I_KEY_ESCAPE_ROPE < GEN_8
     ITEM_ESCAPE_ROPE,
+#endif
 
     // X Items
     ITEM_X_ATTACK,
