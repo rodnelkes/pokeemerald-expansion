@@ -998,15 +998,14 @@ u16 RandomizeTMHM(u16 itemId, u16 moveId)
     if (RandomizerFeatureEnabled(RANDOMIZE_TMS_AND_HMS))
     {
         u16 result;
-        u32 seed;
+        u64 seed;
 
-        seed = ((u32) RANDOMIZER_REASON_MOVES) << 24;
-        seed |= ((u32) moveId) << 8;
+        seed = ((u64) RANDOMIZER_REASON_MOVES) << 48;
+        seed |= ((u64) moveId) << 32;
         seed |= GetRandomizerSeed();
 
         u16 newMove = (u16) Permute(itemId - ITEM_TM01, MOVE_WHITELIST_SIZE, seed);
         result = sRandomizerMoveWhitelist[newMove];
-
         return result;
     }
 
@@ -1017,11 +1016,11 @@ u16 RandomizeTMHM(u16 itemId, u16 moveId)
 u16 RandomizeMoveTutor(u16 moveId)
 {
     u16 result;
-    u32 seed;
+    u64 seed;
     u8 tutor;
 
-    seed = ((u32) RANDOMIZER_REASON_MOVES) << 24;
-    seed |= ((u32) moveId) << 8;
+    seed = ((u64) RANDOMIZER_REASON_MOVES) << 48;
+    seed |= ((u64) moveId) << 32;
     seed |= GetRandomizerSeed();
 
     switch (moveId)
