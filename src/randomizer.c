@@ -349,7 +349,7 @@ static inline u16 GetSpeciesGroup(const struct SpeciesTable* table, u16 species)
 
     #ifndef NDEBUG
         MgbaPrintf(MGBA_LOG_INFO, "GetSpeciesGroup: input %lu species %lu group %lu",
-            (unsigned long)species+1, (unsigned long)groupEntry.species, (unsigned long)groupEntry.group);
+            (unsigned long)species, (unsigned long)table->groupIndexToSpecies[groupEntry], (unsigned long)table->speciesToGroupIndex[species]);
     #endif
 
     return groupEntry;
