@@ -2316,7 +2316,11 @@ bool8 ScrCmd_checkfieldmove(struct ScriptContext *ctx)
         species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
         if (!species)
             break;
+#if RANDOMIZER_AVAILABLE
+        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && (MonKnowsMove(&gPlayerParty[i], move) == TRUE || RANDOMIZE_TMS_AND_HMS))
+#else
         if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && MonKnowsMove(&gPlayerParty[i], move) == TRUE)
+#endif
         {
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;
