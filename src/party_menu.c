@@ -4149,7 +4149,11 @@ bool32 SetUpFieldMove_Surf(void)
     if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_SURF))
         return FALSE;
 
+#if RANDOMIZER_AVAILABLE
+    if ((PartyHasMonWithSurf() == TRUE || RANDOMIZE_TMS_AND_HMS) && IsPlayerFacingSurfableFishableWater() == TRUE)
+#else
     if (PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
+#endif
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
         gPostMenuFieldCallback = FieldCallback_Surf;
