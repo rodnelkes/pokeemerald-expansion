@@ -1724,12 +1724,25 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
 {
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct*)(&gBattleResources->bufferA[battler][4]);
     u16 move = moveInfo->moves[gMoveSelectionCursor[battler]];
+    u16 pwr, acc;
 
     if (IsGimmickSelected(battler, GIMMICK_DYNAMAX) || GetActiveGimmick(battler) == GIMMICK_DYNAMAX)
+    {
         move = GetMaxMove(battler, move);
+        pwr = GetMovePower(move);
+    }
+    else if (IsGimmickSelected(battler, GIMMICK_Z_MOVE))
+    {
+        u16 zMove = GetUsableZMove(battler, move);
 
-    u16 pwr = GetMovePower(move);
-    u16 acc = GetMoveAccuracy(move);
+        pwr = GetMovePower(zMove) == 0 ? 0 : GetZMovePower(move);
+        move = zMove;
+    }
+    else {
+        pwr = GetMovePower(move);
+    }
+
+    acc = GetMoveAccuracy(move);
 
     u8 pwr_num[3], acc_num[3];
     u8 cat_desc[7] = _("CAT: ");
