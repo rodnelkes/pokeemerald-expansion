@@ -1725,7 +1725,7 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct*)(&gBattleResources->bufferA[battler][4]);
     u16 move = moveInfo->moves[gMoveSelectionCursor[battler]];
 
-    if (IsGimmickSelected(battler, GIMMICK_DYNAMAX))
+    if (IsGimmickSelected(battler, GIMMICK_DYNAMAX) || GetActiveGimmick(battler) == GIMMICK_DYNAMAX)
         move = GetMaxMove(battler, move);
 
     u16 pwr = GetMovePower(move);
