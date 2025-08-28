@@ -1770,21 +1770,20 @@ static void PopulateSpeciesFromTrainerLocation(int matchCallId, u8 *destStr)
         {
             timeOfDay = GetTimeOfDayForEncounters(i, WILD_AREA_LAND);
             u16 curSpecies;
-            #if RANDOMIZER_AVAILABLE == TRUE
-                u8 mapGroup, mapNum;
-                mapGroup = gWildMonHeaders[i].mapGroup;
-                mapNum = gWildMonHeaders[i].mapNum;
-            #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+            u8 mapGroup, mapNum;
+            mapGroup = gWildMonHeaders[i].mapGroup;
+            mapNum = gWildMonHeaders[i].mapNum;
+#endif
             numSpecies = 0;
             if (gWildMonHeaders[i].encounterTypes[timeOfDay].landMonsInfo)
             {
                 slot = GetLandEncounterSlot();
                 curSpecies = gWildMonHeaders[i].encounterTypes[timeOfDay].landMonsInfo->wildPokemon[slot].species;
 
-                #if RANDOMIZER_AVAILABLE == TRUE
-                    curSpecies = RandomizeWildEncounter(curSpecies, mapNum, mapGroup,
-                    WILD_AREA_LAND, slot);
-                #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+                curSpecies = RandomizeWildEncounter(curSpecies, mapNum, mapGroup, WILD_AREA_LAND, slot);
+#endif
 
                 species[numSpecies] = curSpecies;
                 numSpecies++;
@@ -1796,10 +1795,9 @@ static void PopulateSpeciesFromTrainerLocation(int matchCallId, u8 *destStr)
                 slot = GetWaterEncounterSlot();
                 curSpecies = gWildMonHeaders[i].encounterTypes[timeOfDay].waterMonsInfo->wildPokemon[slot].species;
 
-                #if RANDOMIZER_AVAILABLE == TRUE
-                    curSpecies = RandomizeWildEncounter(curSpecies, mapNum, mapGroup,
-                    WILD_AREA_WATER, slot);
-                #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+                curSpecies = RandomizeWildEncounter(curSpecies, mapNum, mapGroup, WILD_AREA_WATER, slot);
+#endif
 
                 species[numSpecies] = curSpecies;
                 numSpecies++;
@@ -1832,9 +1830,9 @@ static void PopulateSpeciesFromTrainerParty(int matchCallId, u8 *destStr)
         monId = Random() % partySize;
         species = party[monId].species;
 
-        #if RANDOMIZER_AVAILABLE == TRUE
-            species = RandomizeTrainerMon(trainerId, monId, partySize, species);
-        #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+        species = RandomizeTrainerMon(trainerId, monId, partySize, species);
+#endif
 
         speciesName = GetSpeciesName(species);
     }

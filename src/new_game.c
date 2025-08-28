@@ -214,9 +214,9 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();
-    #if (RANDOMIZER_AVAILABLE == TRUE) && (RANDOMIZER_DYNAMIC_SPECIES == TRUE)
-        PreloadRandomizationTables();
-    #endif
+#if RANDOMIZER_AVAILABLE == TRUE && RANDOMIZER_DYNAMIC_SPECIES == TRUE
+    PreloadRandomizationTables();
+#endif
 }
 
 static void ResetMiniGamesRecords(void)

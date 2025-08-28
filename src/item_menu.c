@@ -1027,7 +1027,7 @@ static void PrintItemDescription(int itemIndex)
     const u8 *str;
     if (itemIndex != LIST_CANCEL)
     {
-        #if RANDOMIZER_AVAILABLE
+#if RANDOMIZER_AVAILABLE == TRUE
         u16 itemId = GetBagItemId(gBagPosition.pocket, itemIndex);
 
         if (GetItemPocket(itemId) == POCKET_TM_HM)
@@ -1037,9 +1037,9 @@ static void PrintItemDescription(int itemIndex)
         }
         else
             str = GetItemDescription(itemId);
-        #else
-            str = GetItemDescription(GetBagItemId(gBagPosition.pocket, itemIndex));
-        #endif
+#else
+        str = GetItemDescription(GetBagItemId(gBagPosition.pocket, itemIndex));
+#endif
     }
     else
     {

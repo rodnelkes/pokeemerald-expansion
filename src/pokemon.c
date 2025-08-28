@@ -3454,12 +3454,10 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum, u8 cantRandomizeAbility)
         gLastUsedAbility = GetSpeciesAbility(species, i);
     }
 
-    #if RANDOMIZER_AVAILABLE == TRUE
-        if(!cantRandomizeAbility && gLastUsedAbility != ABILITY_NONE)
-        {
-            gLastUsedAbility = RandomizeAbility(species, abilityNum, gLastUsedAbility);
-        }
-    #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+    if(!cantRandomizeAbility && gLastUsedAbility != ABILITY_NONE)
+        gLastUsedAbility = RandomizeAbility(species, abilityNum, gLastUsedAbility);
+#endif
 
     return gLastUsedAbility;
 }

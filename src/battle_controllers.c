@@ -118,17 +118,17 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
     {
         ZeroEnemyPartyMons();
-        #if (RANDOMIZER_AVAILABLE)
-            u8 mapNum = gSaveBlock1Ptr->location.mapNum;
-            u8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
-            u8 localId = LOCALID_ROUTE101_ZIGZAGOON;
+#if RANDOMIZER_AVAILABLE == TRUE
+        u8 mapNum = gSaveBlock1Ptr->location.mapNum;
+        u8 mapGroup = gSaveBlock1Ptr->location.mapGroup;
+        u8 localId = LOCALID_ROUTE101_ZIGZAGOON;
 
-            u16 species = RandomizeFixedEncounterMon(SPECIES_ZIGZAGOON, mapNum, mapGroup, localId);
-            u32 personality = ((u32) VarGet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_H) << 16) | VarGet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_L);
-            CreateMon(&gEnemyParty[0], species, 2, USE_RANDOM_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
-        #else
-            CreateMon(&gEnemyParty[0], SPECIES_ZIGZAGOON, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
-        #endif
+        u16 species = RandomizeFixedEncounterMon(SPECIES_ZIGZAGOON, mapNum, mapGroup, localId);
+        u32 personality = ((u32) VarGet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_H) << 16) | VarGet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_L);
+        CreateMon(&gEnemyParty[0], species, 2, USE_RANDOM_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
+#else
+        CreateMon(&gEnemyParty[0], SPECIES_ZIGZAGOON, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+#endif
         i = 0;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &i);
     }

@@ -167,9 +167,9 @@ static inline u16 GetItemTMHMMoveId(u16 item)
             return MOVE_NONE;
     }
 
-    #if (RANDOMIZER_AVAILABLE)
-        moveId = RandomizeTMHM(item, moveId);
-    #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+    moveId = RandomizeTMHM(item, moveId);
+#endif
 
     return moveId;
 }
@@ -186,12 +186,12 @@ static inline enum TMHMItemId GetTMHMItemId(enum TMHMIndex index)
 
 static inline u16 GetTMHMMoveId(enum TMHMIndex index)
 {
-    #if RANDOMIZER_AVAILABLE
-        struct TmHmIndexKey originalTMHM = gTMHMItemMoveIds[index];
-        return originalTMHM.moveId == MOVE_NONE ? MOVE_NONE : RandomizeTMHM(originalTMHM.itemId, originalTMHM.moveId);
-    #else
-        return gTMHMItemMoveIds[index].moveId;
-    #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+    struct TmHmIndexKey originalTMHM = gTMHMItemMoveIds[index];
+    return originalTMHM.moveId == MOVE_NONE ? MOVE_NONE : RandomizeTMHM(originalTMHM.itemId, originalTMHM.moveId);
+#else
+    return gTMHMItemMoveIds[index].moveId;
+#endif
 }
 
 void BagPocket_SetSlotData(struct BagPocket *pocket, u32 pocketPos, struct ItemSlot newSlot);

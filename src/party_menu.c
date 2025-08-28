@@ -2832,6 +2832,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
+#if RANDOMIZER_AVAILABLE == TRUE
     if (RANDOMIZE_TMS_AND_HMS)
     {
         bool8 canUseFlash = FlagGet(FLAG_BADGE02_GET) && (ShouldDoBrailleRegisteelEffect() || (gMapHeader.cave == TRUE && !FlagGet(FLAG_SYS_USE_FLASH)));
@@ -2840,6 +2841,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     }
     else
     {
+#endif
         // Add field moves to action list
         for (i = 0; i < MAX_MON_MOVES; i++)
         {
@@ -2852,7 +2854,9 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
                 }
             }
         }
+#if RANDOMIZER_AVAILABLE == TRUE
     }
+#endif
 
     if (!InBattlePike())
     {

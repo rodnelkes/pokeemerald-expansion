@@ -67,65 +67,65 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
     switch(feature)
     {
         case RANDOMIZE_WILD_MON:
-            #ifdef FORCE_RANDOMIZE_WILD_MON
-                return FORCE_RANDOMIZE_WILD_MON;
-            #else
-                return FlagGet(RANDOMIZER_FLAG_WILD_MON);
-            #endif
+#ifdef FORCE_RANDOMIZE_WILD_MON
+            return FORCE_RANDOMIZE_WILD_MON;
+#else
+            return FlagGet(RANDOMIZER_FLAG_WILD_MON);
+#endif
         case RANDOMIZE_FIELD_ITEMS:
-            #ifdef FORCE_RANDOMIZE_FIELD_ITEMS
-                return FORCE_RANDOMIZE_FIELD_ITEMS;
-            #else
-                return FlagGet(RANDOMIZER_FLAG_FIELD_ITEMS);
-            #endif
+#ifdef FORCE_RANDOMIZE_FIELD_ITEMS
+            return FORCE_RANDOMIZE_FIELD_ITEMS;
+#else
+            return FlagGet(RANDOMIZER_FLAG_FIELD_ITEMS);
+#endif
         case RANDOMIZE_TRAINER_MON:
-            #ifdef FORCE_RANDOMIZE_TRAINER_MON
-                return FORCE_RANDOMIZE_TRAINER_MON;
-            #else
-                return FlagGet(RANDOMIZER_FLAG_TRAINER_MON);
-            #endif
+#ifdef FORCE_RANDOMIZE_TRAINER_MON
+            return FORCE_RANDOMIZE_TRAINER_MON;
+#else
+            return FlagGet(RANDOMIZER_FLAG_TRAINER_MON);
+#endif
         case RANDOMIZE_FIXED_MON:
-            #ifdef FORCE_RANDOMIZE_FIXED_MON
-                return FORCE_RANDOMIZE_FIXED_MON;
-            #else
-                return FlagGet(RANDOMIZER_FLAG_FIXED_MON);
-            #endif
+#ifdef FORCE_RANDOMIZE_FIXED_MON
+            return FORCE_RANDOMIZE_FIXED_MON;
+#else
+            return FlagGet(RANDOMIZER_FLAG_FIXED_MON);
+#endif
         case RANDOMIZE_STARTER_AND_GIFT_MON:
-            #ifdef FORCE_RANDOMIZE_STARTER_AND_GIFT_MON
-                return FORCE_RANDOMIZE_STARTER_AND_GIFT_MON;
-            #else
-                return FlagGet(RANDOMIZER_FLAG_STARTER_AND_GIFT_MON);
-            #endif
+#ifdef FORCE_RANDOMIZE_STARTER_AND_GIFT_MON
+            return FORCE_RANDOMIZE_STARTER_AND_GIFT_MON;
+#else
+            return FlagGet(RANDOMIZER_FLAG_STARTER_AND_GIFT_MON);
+#endif
         case RANDOMIZE_EGG_MON:
-            #ifdef FORCE_RANDOMIZE_EGG_MON
-                return FORCE_RANDOMIZE_EGG_MON;
-            #else
-                return FlagGet(RANDOMIZER_FLAG_EGG_MON);
-            #endif
+#ifdef FORCE_RANDOMIZE_EGG_MON
+            return FORCE_RANDOMIZE_EGG_MON;
+#else
+            return FlagGet(RANDOMIZER_FLAG_EGG_MON);
+#endif
         case RANDOMIZE_ABILITIES:
-            #ifdef FORCE_RANDOMIZE_ABILITIES
-                return FORCE_RANDOMIZE_ABILITIES;
-            #else
-                return FlagGet(RANDOMIZER_FLAG_ABILITIES);
-            #endif
+#ifdef FORCE_RANDOMIZE_ABILITIES
+            return FORCE_RANDOMIZE_ABILITIES;
+#else
+            return FlagGet(RANDOMIZER_FLAG_ABILITIES);
+#endif
         case RANDOMIZE_TMS_AND_HMS:
-            #ifdef FORCE_RANDOMIZE_TMS_AND_HMS
-                return FORCE_RANDOMIZE_TMS_AND_HMS;
-            #else
-                return FlagGet(RANDOMIZER_FLAG_TMS_AND_HMS);
-            #endif
+#ifdef FORCE_RANDOMIZE_TMS_AND_HMS
+            return FORCE_RANDOMIZE_TMS_AND_HMS;
+#else
+            return FlagGet(RANDOMIZER_FLAG_TMS_AND_HMS);
+#endif
         case RANDOMIZE_MOVE_TUTORS:
-            #ifdef FORCE_RANDOMIZE_MOVE_TUTORS
-                return FORCE_RANDOMIZE_MOVE_TUTORS;
-            #else
-                return FlagGet(RANDOMIZER_FLAG_MOVE_TUTORS);
-            #endif
+#ifdef FORCE_RANDOMIZE_MOVE_TUTORS
+            return FORCE_RANDOMIZE_MOVE_TUTORS;
+#else
+            return FlagGet(RANDOMIZER_FLAG_MOVE_TUTORS);
+#endif
         case RANDOMIZE_BERRIES:
-            #ifdef FORCE_RANDOMIZE_BERRIES
-                return FORCE_RANDOMIZE_BERRIES;
-            #else
-                return FlagGet(RANDOMIZER_FLAG_BERRIES);
-            #endif
+#ifdef FORCE_RANDOMIZE_BERRIES
+            return FORCE_RANDOMIZE_BERRIES;
+#else
+            return FlagGet(RANDOMIZER_FLAG_BERRIES);
+#endif
         default:
             return FALSE;
     }
@@ -133,26 +133,26 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
 
 u32 GetRandomizerSeed(void)
 {
-    #if RANDOMIZER_SEED_IS_TRAINER_ID == TRUE
-        return GetTrainerId(gSaveBlock2Ptr->playerTrainerId);
-    #else
-        u32 result;
-        result = ((u32)VarGet(RANDOMIZER_VAR_SEED_H) << 16) | VarGet(RANDOMIZER_VAR_SEED_L);
-        return result;
-    #endif
+#if RANDOMIZER_SEED_IS_TRAINER_ID == TRUE
+    return GetTrainerId(gSaveBlock2Ptr->playerTrainerId);
+#else
+    u32 result;
+    result = ((u32)VarGet(RANDOMIZER_VAR_SEED_H) << 16) | VarGet(RANDOMIZER_VAR_SEED_L);
+    return result;
+#endif
 }
 
 // Sets the seed that will be used for the randomizer if doing so is possible.
 bool32 SetRandomizerSeed(u32 newSeed)
 {
-    #if RANDOMIZER_SEED_IS_TRAINER_ID == TRUE
-        // It isn't possible to set the randomizer seed in this case.
-        return FALSE;
-    #else
-        VarSet(RANDOMIZER_VAR_SEED_L, (u16)newSeed);
-        VarSet(RANDOMIZER_VAR_SEED_H, (u16)(newSeed >> 16));
-        return TRUE;
-    #endif
+#if RANDOMIZER_SEED_IS_TRAINER_ID == TRUE
+    // It isn't possible to set the randomizer seed in this case.
+    return FALSE;
+#else
+    VarSet(RANDOMIZER_VAR_SEED_L, (u16)newSeed);
+    VarSet(RANDOMIZER_VAR_SEED_H, (u16)(newSeed >> 16));
+    return TRUE;
+#endif
 }
 
 static bool32 IsSpeciesPermitted(u16 species)
@@ -173,12 +173,12 @@ u32 GenerateSeedForRandomizer(void)
 {
     u32 data;
     const u32 vblankCounter = gMain.vblankCounter1;
-    #if HQ_RANDOM == TRUE
-        data = Random32();
-    #else
-        data = gRngValue;
-        Random();
-    #endif
+#if HQ_RANDOM == TRUE
+    data = Random32();
+#else
+    data = gRngValue;
+    Random();
+#endif
     return data ^ vblankCounter;
 }
 
@@ -347,10 +347,14 @@ static inline u16 GetSpeciesGroup(const struct SpeciesTable* table, u16 species)
     u16 groupEntry;
     groupEntry = table->groupData[table->speciesToGroupIndex[species]];
 
-    #ifndef NDEBUG
-        MgbaPrintf(MGBA_LOG_INFO, "GetSpeciesGroup: input %lu species %lu group %lu",
-            (unsigned long)species, (unsigned long)table->groupIndexToSpecies[groupEntry], (unsigned long)table->speciesToGroupIndex[species]);
-    #endif
+#ifndef NDEBUG
+    MgbaPrintf(
+        MGBA_LOG_INFO,
+        "GetSpeciesGroup: input %lu species %lu group %lu",
+        (unsigned long)species,
+        (unsigned long)table->groupIndexToSpecies[groupEntry],
+        (unsigned long)table->speciesToGroupIndex[species]);
+#endif
 
     return groupEntry;
 

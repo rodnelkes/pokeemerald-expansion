@@ -499,12 +499,12 @@ static bool8 MonListHasSpecies(const struct WildEncounterTypes *type, u16 specie
         {
             u16 curSpecies;
             curSpecies = info->wildPokemon[i].species;
-            #if RANDOMIZER_AVAILABLE == TRUE
-                if (!IsRandomizationPossible(curSpecies, species))
-                    continue;
-                curSpecies = RandomizeWildEncounter(
-                    curSpecies, currentMapNum, currentMapGroup, area, i);
-            #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+            if (!IsRandomizationPossible(curSpecies, species))
+                continue;
+
+            curSpecies = RandomizeWildEncounter(curSpecies, currentMapNum, currentMapGroup, area, i);
+#endif
             if (curSpecies == species)
                 return TRUE;
         }

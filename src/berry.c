@@ -2149,9 +2149,9 @@ void ObjectEventInteractionGetBerryTreeData(void)
     num = gSaveBlock1Ptr->location.mapNum;
     group = gSaveBlock1Ptr->location.mapGroup;
 
-    #if (RANDOMIZER_AVAILABLE)
-        berry = RandomizeBerry(berry);
-    #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+    berry = RandomizeBerry(berry);
+#endif
 
     if (IsBerryTreeSparkling(localId, num, group))
         gSpecialVar_0x8004 = BERRY_STAGE_SPARKLING;
@@ -2179,9 +2179,9 @@ void ObjectEventInteractionGetBerryCountString(void)
     if (GetStageByBerryTreeId(treeId) != BERRY_STAGE_BERRIES)
         berry.quantity = 1;
 
-    #if (RANDOMIZER_AVAILABLE)
-        berry = RandomizeBerry(berry);
-    #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+    berry = RandomizeBerry(berry);
+#endif
 
     gSpecialVar_0x8006 = berry.itemId;
     CopyItemNameHandlePlural(berry.itemId, gStringVar1, berry.quantity);
@@ -2236,9 +2236,9 @@ void ObjectEventInteractionPickBerryTree(void)
     mutatedBerry.itemId = BerryTypeToItemId(mutationValue);
     mutatedBerry.quantity = 1;
 
-    #if (RANDOMIZER_AVAILABLE)
-        berry = RandomizeBerry(berry);
-    #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+    berry = RandomizeBerry(berry);
+#endif
 
     if (!OW_BERRY_MUTATIONS || mutationValue == 0)
     {
@@ -2248,9 +2248,9 @@ void ObjectEventInteractionPickBerryTree(void)
     gSpecialVar_0x8004 = (CheckBagHasSpace(berry.itemId, berry.quantity) && CheckBagHasSpace(mutatedBerry.itemId, mutatedBerry.quantity)) + 2;
     if (gSpecialVar_0x8004 == 3)
     {
-        #if (RANDOMIZER_AVAILABLE)
-            mutatedBerry = RandomizeBerry(mutatedBerry);
-        #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+        mutatedBerry = RandomizeBerry(mutatedBerry);
+#endif
 
         AddBagItem(berry.itemId, berry.quantity);
         AddBagItem(mutatedBerry.itemId, mutatedBerry.quantity);

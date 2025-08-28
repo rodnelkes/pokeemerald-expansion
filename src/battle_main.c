@@ -1922,10 +1922,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 abilityNum = 0;
             u16 species = partyData[monIndex].species;
 
-            #if (RANDOMIZER_AVAILABLE)
-                if(!isTrainerBossTrainer && trainer != GetDebugPlayerTrainer() && trainer != GetDebugAiTrainer())
-                    species = RandomizeTrainerMon(seed, i, monsCount, species);
-            #endif
+#if RANDOMIZER_AVAILABLE == TRUE
+            if(!isTrainerBossTrainer && trainer != GetDebugPlayerTrainer() && trainer != GetDebugAiTrainer())
+                species = RandomizeTrainerMon(seed, i, monsCount, species);
+#endif
 
             if (trainer->battleType != TRAINER_BATTLE_TYPE_SINGLES)
                 personalityValue = 0x80;
