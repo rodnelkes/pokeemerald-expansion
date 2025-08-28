@@ -76,8 +76,8 @@ void RandomizeBirchZigzagoon()
     CreateMon(randomMon, species, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
 
     u32 personality = GetMonData(randomMon, MON_DATA_PERSONALITY);
-    VarSet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_L, (u16) personality);
-    VarSet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_H, (u16) (personality >> 16));
+    VarSet(RANDOMIZER_VAR_ZIGZAGOON_PERSONALITY_L, (u16) personality);
+    VarSet(RANDOMIZER_VAR_ZIGZAGOON_PERSONALITY_H, (u16) (personality >> 16));
 
     bool32 isShiny = GetMonData(randomMon, MON_DATA_IS_SHINY);
     u8 isFemale = GetMonGender(randomMon) == MON_FEMALE;
@@ -124,7 +124,7 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
         u8 localId = LOCALID_ROUTE101_ZIGZAGOON;
 
         u16 species = RandomizeFixedEncounterMon(SPECIES_ZIGZAGOON, mapNum, mapGroup, localId);
-        u32 personality = ((u32) VarGet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_H) << 16) | VarGet(VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_L);
+        u32 personality = ((u32) VarGet(RANDOMIZER_VAR_ZIGZAGOON_PERSONALITY_H) << 16) | VarGet(RANDOMIZER_VAR_ZIGZAGOON_PERSONALITY_L);
         CreateMon(&gEnemyParty[0], species, 2, USE_RANDOM_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
 #else
         CreateMon(&gEnemyParty[0], SPECIES_ZIGZAGOON, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
