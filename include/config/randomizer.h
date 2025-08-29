@@ -45,7 +45,7 @@
 #define FORCE_RANDOMIZE_TMS_AND_HMS                   TRUE
 #define FORCE_RANDOMIZE_MOVE_TUTORS                   TRUE
 #define FORCE_RANDOMIZE_BERRIES                       TRUE
-#define FORCE_ADDITIONAL_TRAINER_POKEMON              0
+// #define FORCE_ADDITIONAL_TRAINER_POKEMON              0
 
 // These flags control whether a particular randomization feature is active.
 // They are ignored and disabled if the flags above are set.
@@ -89,9 +89,9 @@
 #define RANDOMIZER_FLAG_BERRIES                       FLAG_RANDOMIZER_BERRIES
 #endif
 
-#ifndef FORCE_ADDITIONAL_TRAINER_POKEMON
-#define RANDOMIZER_VAR_ADDITIONAL_TRAINER_POKEMON     VAR_RANDOMIZER_ADDITIONAL_TRAINER_POKEMON
-#endif
+// #ifndef FORCE_ADDITIONAL_TRAINER_POKEMON
+// #define RANDOMIZER_VAR_ADDITIONAL_TRAINER_POKEMON     VAR_RANDOMIZER_ADDITIONAL_TRAINER_POKEMON
+// #endif
 
 #define RANDOMIZER_VAR_SPECIES_MODE                   VAR_RANDOMIZER_SPECIES_MODE
 #define RANDOMIZER_VAR_ZIGZAGOON_PERSONALITY_L        VAR_RANDOMIZER_ZIGZAGOON_PERSONALITY_L

@@ -129,8 +129,10 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
         case RANDOMIZE_ADDITIONAL_TRAINER_POKEMON:
 #ifdef FORCE_ADDITIONAL_TRAINER_POKEMON
             return FORCE_ADDITIONAL_TRAINER_POKEMON > 0;
-#else
+#elifdef RANDOMIZER_VAR_ADDITIONAL_TRAINER_POKEMON
             return VarGet(RANDOMIZER_VAR_ADDITIONAL_TRAINER_POKEMON) > 0;
+#else
+            return TRUE;
 #endif
         default:
             return FALSE;

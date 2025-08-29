@@ -1917,11 +1917,11 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 
 #ifdef FORCE_ADDITIONAL_TRAINER_POKEMON
             monsToAdd = VarGet(FORCE_ADDITIONAL_TRAINER_POKEMON);
-#endif // FORCE_ADDITIONAL_TRAINER_POKEMON
-
-#ifdef RANDOMIZER_VAR_ADDITIONAL_TRAINER_POKEMON
+#elifdef RANDOMIZER_VAR_ADDITIONAL_TRAINER_POKEMON
             monsToAdd = VarGet(RANDOMIZER_VAR_ADDITIONAL_TRAINER_POKEMON);
-#endif // RANDOMIZER_VAR_ADDITIONAL_TRAINER_POKEMON
+#else
+            monsToAdd = FlagGet(FLAG_HIDE_ROUTE_103_RIVAL) ? 5 : 0 ;
+#endif // FORCE_ADDITIONAL_TRAINER_POKEMON
 
             monsCount = min(monsCount + monsToAdd, 6);
         }
