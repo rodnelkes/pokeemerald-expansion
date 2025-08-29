@@ -126,6 +126,12 @@ bool32 RandomizerFeatureEnabled(enum RandomizerFeature feature)
 #else
             return FlagGet(RANDOMIZER_FLAG_BERRIES);
 #endif
+        case RANDOMIZE_ADDITIONAL_TRAINER_POKEMON:
+#ifdef FORCE_ADDITIONAL_TRAINER_POKEMON
+            return FORCE_ADDITIONAL_TRAINER_POKEMON > 0;
+#else
+            return VarGet(RANDOMIZER_VAR_ADDITIONAL_TRAINER_POKEMON) > 0;
+#endif
         default:
             return FALSE;
     }

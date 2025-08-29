@@ -48,6 +48,8 @@ enum RandomizerFeature
     RANDOMIZE_MOVE_TUTORS,
     // Randomization of berries.
     RANDOMIZE_BERRIES,
+    // Adds additional randomized Trainer Pokémon.
+    RANDOMIZE_ADDITIONAL_TRAINER_POKEMON,
 };
 
 enum RandomizerReason
@@ -64,6 +66,7 @@ enum RandomizerReason
     RANDOMIZER_REASON_ABILITIES,
     RANDOMIZER_REASON_MOVES,
     RANDOMIZER_REASON_BERRIES,
+    RANDOMIZER_REASON_ADDITIONAL_TRAINER_POKEMON,
 };
 
 enum RandomizerOption {
