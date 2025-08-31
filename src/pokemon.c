@@ -2787,9 +2787,6 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                 }.combinedValue;
             }
             break;
-        case MON_DATA_CANT_RANDOMIZE_ABILITY:
-            retVal = GetSubstruct3(boxMon)->cantRandomizeAbility;
-            break;
         default:
             break;
         }
@@ -3203,9 +3200,6 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             substruct1->evolutionTracker2 = evoTracker.tracker2;
             break;
         }
-        case MON_DATA_CANT_RANDOMIZE_ABILITY:
-            SET8(GetSubstruct3(boxMon)->cantRandomizeAbility);
-            break;
         default:
             break;
         }
@@ -3432,7 +3426,7 @@ u8 GetMonsStateToDoubles_2(void)
     return (aliveCount > 1) ? PLAYER_HAS_TWO_USABLE_MONS : PLAYER_HAS_ONE_USABLE_MON;
 }
 
-u16 GetAbilityBySpecies(u16 species, u8 abilityNum, u8 cantRandomizeAbility)
+u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
 {
     int i;
 
@@ -3455,7 +3449,7 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum, u8 cantRandomizeAbility)
     }
 
 #if RANDOMIZER_AVAILABLE == TRUE
-    if(!cantRandomizeAbility && gLastUsedAbility != ABILITY_NONE)
+    if(gLastUsedAbility != ABILITY_NONE)
         gLastUsedAbility = RandomizeAbility(species, abilityNum, gLastUsedAbility);
 #endif
 
@@ -3466,8 +3460,7 @@ u16 GetMonAbility(struct Pokemon *mon)
 {
     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
     u8 abilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
-    u8 cantRandomizeAbility = GetMonData(mon, MON_DATA_CANT_RANDOMIZE_ABILITY, NULL);
-    return GetAbilityBySpecies(species, abilityNum, cantRandomizeAbility);
+    return GetAbilityBySpecies(species, abilityNum);
 }
 
 void CreateSecretBaseEnemyParty(struct SecretBase *secretBaseRecord)
@@ -3713,13 +3706,12 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     dst->spAttack = GetMonData(src, MON_DATA_SPATK, NULL);
     dst->spDefense = GetMonData(src, MON_DATA_SPDEF, NULL);
     dst->abilityNum = GetMonData(src, MON_DATA_ABILITY_NUM, NULL);
-    dst->cantRandomizeAbility = GetMonData(src, MON_DATA_CANT_RANDOMIZE_ABILITY, NULL);
     dst->otId = GetMonData(src, MON_DATA_OT_ID, NULL);
     dst->types[0] = GetSpeciesType(dst->species, 0);
     dst->types[1] = GetSpeciesType(dst->species, 1);
     dst->types[2] = TYPE_MYSTERY;
     dst->isShiny = IsMonShiny(src);
-    dst->ability = GetAbilityBySpecies(dst->species, dst->abilityNum, dst->cantRandomizeAbility);
+    dst->ability = GetAbilityBySpecies(dst->species, dst->abilityNum);
     GetMonData(src, MON_DATA_NICKNAME, nickname);
     StringCopy_Nickname(dst->nickname, nickname);
     GetMonData(src, MON_DATA_OT_NAME, dst->otName);
@@ -6627,7 +6619,7 @@ u32 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, enum FormChanges
     if (formChanges != NULL)
     {
         heldItem = GetBoxMonData(boxMon, MON_DATA_HELD_ITEM, NULL);
-        ability = GetAbilityBySpecies(species, GetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, NULL), GetBoxMonData(boxMon, MON_DATA_CANT_RANDOMIZE_ABILITY, NULL));
+        ability = GetAbilityBySpecies(species, GetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, NULL));
 
         for (i = 0; formChanges[i].method != FORM_CHANGE_TERMINATOR; i++)
         {

@@ -1888,7 +1888,6 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     u32 personalityValue;
     s32 i;
     u8 monsCount, oldMonsCount;
-    u8 isTrainerBossTrainer = trainer->isBossTrainer;
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL)))
@@ -1954,7 +1953,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u16 species = selPartyMon.species;
 
 #if RANDOMIZER_AVAILABLE == TRUE
-            if(!isTrainerBossTrainer && trainer != GetDebugPlayerTrainer() && trainer != GetDebugAiTrainer())
+            if(trainer != GetDebugPlayerTrainer() && trainer != GetDebugAiTrainer())
             {
                 u8 selMonCount = RandomizerFeatureEnabled(RANDOMIZE_ADDITIONAL_TRAINER_POKEMON) ? oldMonsCount : monsCount;
                 species = RandomizeTrainerMon(seed, i, selMonCount, species);
@@ -2017,7 +2016,6 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 }
             }
             SetMonData(&party[i], MON_DATA_ABILITY_NUM, &abilityNum);
-            SetMonData(&party[i], MON_DATA_CANT_RANDOMIZE_ABILITY, &isTrainerBossTrainer);
             SetMonData(&party[i], MON_DATA_FRIENDSHIP, &(selPartyMon.friendship));
             if (selPartyMon.ball != ITEM_NONE)
             {
@@ -3534,7 +3532,7 @@ static void DoBattleIntro(void)
                 gBattleMons[battler].types[0] = GetSpeciesType(gBattleMons[battler].species, 0);
                 gBattleMons[battler].types[1] = GetSpeciesType(gBattleMons[battler].species, 1);
                 gBattleMons[battler].types[2] = TYPE_MYSTERY;
-                gBattleMons[battler].ability = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum, gBattleMons[battler].cantRandomizeAbility);
+                gBattleMons[battler].ability = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum);
                 gBattleStruct->hpOnSwitchout[GetBattlerSide(battler)] = gBattleMons[battler].hp;
                 memset(&gBattleMons[battler].volatiles, 0, sizeof(struct Volatiles));
                 for (i = 0; i < NUM_BATTLE_STATS; i++)
