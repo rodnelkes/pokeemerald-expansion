@@ -488,6 +488,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Mightyena
 Level: 34
@@ -515,6 +516,7 @@ Gender: Female
 Music: Aqua
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Carvanha
 Level: 28
@@ -530,6 +532,7 @@ Gender: Female
 Music: Aqua
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Sharpedo
 Level: 37
@@ -545,6 +548,7 @@ Gender: Male
 Music: Aqua
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Mightyena
 Level: 41
@@ -3834,6 +3838,7 @@ Music: Elite Four
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
 Mugshot: Purple
+Boss: Yes
 
 Mightyena
 Level: 46
@@ -3859,6 +3864,7 @@ Music: Elite Four
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
 Mugshot: Green
+Boss: Yes
 
 Dusclops
 Level: 48
@@ -3884,6 +3890,7 @@ Music: Elite Four
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
 Mugshot: Pink
+Boss: Yes
 
 Sealeo
 Level: 50
@@ -3909,6 +3916,7 @@ Music: Elite Four
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
 Mugshot: Blue
+Boss: Yes
 
 Shelgon
 Level: 52
@@ -3933,6 +3941,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Geodude
 Level: 12
@@ -3951,6 +3960,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Machop
 Level: 16
@@ -3969,6 +3979,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Voltorb
 Level: 20
@@ -3990,6 +4001,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Numel
 Level: 24
@@ -4011,6 +4023,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Spinda
 Level: 27
@@ -4032,6 +4045,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Swablu
 Level: 29
@@ -4056,6 +4070,7 @@ Gender: Male
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Claydol
 Level: 41
@@ -4077,6 +4092,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Luvdisc
 Level: 41
@@ -4993,6 +5009,7 @@ Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
 Mugshot: Yellow
+Boss: Yes
 
 Wailord
 Level: 57
@@ -7600,6 +7617,7 @@ Gender: Male
 Music: Magma
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Camerupt
 Level: 36
@@ -7678,6 +7696,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Altaria
 Level: 44
@@ -7702,6 +7721,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Treecko
 Level: 5
@@ -7714,6 +7734,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Slugma
 Level: 18
@@ -7732,6 +7753,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Slugma
 Level: 29
@@ -7750,6 +7772,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Torchic
 Level: 5
@@ -7762,6 +7785,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Wingull
 Level: 18
@@ -7780,6 +7804,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Pelipper
 Level: 29
@@ -7798,6 +7823,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Mudkip
 Level: 5
@@ -7810,6 +7836,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Lombre
 Level: 18
@@ -7828,6 +7855,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Lombre
 Level: 29
@@ -7846,6 +7874,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Treecko
 Level: 5
@@ -7858,6 +7887,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Wingull
 Level: 18
@@ -7876,6 +7906,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Slugma
 Level: 29
@@ -7894,6 +7925,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Torchic
 Level: 5
@@ -7906,6 +7938,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Wingull
 Level: 18
@@ -7924,6 +7957,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Pelipper
 Level: 29
@@ -7942,6 +7976,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Mudkip
 Level: 5
@@ -7954,6 +7989,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Lombre
 Level: 18
@@ -7972,6 +8008,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Lombre
 Level: 29
@@ -8848,6 +8885,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Lotad
 Level: 13
@@ -8863,6 +8901,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Wingull
 Level: 13
@@ -8920,6 +8959,7 @@ Gender: Male
 Music: Magma
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Numel
 Level: 18
@@ -8956,6 +8996,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Slugma
 Level: 13
@@ -8971,6 +9012,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Wingull
 Level: 13
@@ -8986,6 +9028,7 @@ Gender: Male
 Music: Magma
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Mightyena
 Level: 37
@@ -9004,6 +9047,7 @@ Gender: Male
 Music: Magma
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Mightyena
 Level: 24
@@ -9847,6 +9891,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Ralts
 Level: 16
@@ -9859,6 +9904,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Altaria
 Level: 47
@@ -9883,6 +9929,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Altaria
 Level: 50
@@ -9907,6 +9954,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Altaria
 Level: 53
@@ -9931,6 +9979,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Altaria
 Level: 56
@@ -9955,6 +10004,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Tropius
 Level: 31
@@ -9976,6 +10026,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Tropius
 Level: 31
@@ -9997,6 +10048,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Tropius
 Level: 31
@@ -10018,6 +10070,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Tropius
 Level: 31
@@ -10039,6 +10092,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Tropius
 Level: 31
@@ -10060,6 +10114,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Tropius
 Level: 31
@@ -10993,6 +11048,7 @@ Gender: Male
 Music: Magma
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Numel
 Level: 26
@@ -11029,6 +11085,7 @@ Gender: Male
 Music: Magma
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Mightyena
 Level: 42
@@ -11545,6 +11602,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Lotad
 Level: 13
@@ -11560,6 +11618,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Torkoal
 Level: 13
@@ -11575,6 +11634,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Golem
 Level: 32
@@ -11596,6 +11656,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Omanyte
 Level: 37
@@ -11620,6 +11681,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Omastar
 Level: 42
@@ -11644,6 +11706,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Aerodactyl
 Level: 47
@@ -11671,6 +11734,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Machamp
 Level: 33
@@ -11692,6 +11756,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Machamp
 Level: 38
@@ -11713,6 +11778,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Hitmonchan
 Level: 40
@@ -11737,6 +11803,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Hitmonlee
 Level: 46
@@ -11764,6 +11831,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Mareep
 Level: 36
@@ -11785,6 +11853,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Pikachu
 Level: 39
@@ -11809,6 +11878,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Raichu
 Level: 44
@@ -11833,6 +11903,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Electabuzz
 Level: 50
@@ -11860,6 +11931,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Magcargo
 Level: 38
@@ -11881,6 +11953,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Growlithe
 Level: 41
@@ -11905,6 +11978,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Houndour
 Level: 46
@@ -11932,6 +12006,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Arcanine
 Level: 51
@@ -11959,6 +12034,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Chansey
 Level: 42
@@ -11980,6 +12056,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Slaking
 Level: 47
@@ -12004,6 +12081,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Slaking
 Level: 52
@@ -12028,6 +12106,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Slaking
 Level: 57
@@ -12055,6 +12134,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Dratini
 Level: 40
@@ -12079,6 +12159,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Hoothoot
 Level: 43
@@ -12106,6 +12187,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Noctowl
 Level: 48
@@ -12133,6 +12215,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Noctowl
 Level: 53
@@ -12160,6 +12243,7 @@ Gender: Male
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Slowpoke
 Level: 48
@@ -12184,6 +12268,7 @@ Gender: Male
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Drowzee
 Level: 53
@@ -12211,6 +12296,7 @@ Gender: Male
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Hypno
 Level: 58
@@ -12238,6 +12324,7 @@ Gender: Male
 Music: Female
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Hypno
 Level: 63
@@ -12265,6 +12352,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Poliwag
 Level: 46
@@ -12289,6 +12377,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Poliwhirl
 Level: 50
@@ -12313,6 +12402,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Lapras
 Level: 56
@@ -12340,6 +12430,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Lapras
 Level: 61
@@ -12394,6 +12485,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Skarmory
 Level: 77
@@ -13210,6 +13302,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Charmander
 Level: 5
@@ -13222,6 +13315,7 @@ Gender: Female
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Bulbasaur
 Level: 5
@@ -13234,6 +13328,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Groudon
 Level: 5
@@ -13246,6 +13341,7 @@ Gender: Female
 Music: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICTION
+Boss: Yes
 
 Kyogre
 Level: 5
