@@ -1158,13 +1158,9 @@ struct RandomItem RandomizeBerry(struct RandomItem berry)
         u64 seed;
         u32 seedA, seedB;
 
-        seed = ((u64) RANDOMIZER_REASON_BERRIES) << 56;
-        seed |= ((u64) gObjectEvents[gSelectedObjectEvent].mapNum) << 48;
-        seed |= ((u64) gObjectEvents[gSelectedObjectEvent].mapGroup) << 40;
-        seed |= ((u64) gSpecialVar_LastTalked) << 32;
-        seed |= ((u64) berry.itemId) << 16;
-        seed |= ((u64) berry.quantity) << 8;
-        seed |= (u64) GetRandomizerSeed();
+        seed = ((u64) RANDOMIZER_REASON_BERRIES) << 39;
+        seed |= ((u64) GetRandomizerSeed()) << 7;
+        seed |= (u64) gObjectEvents[gSelectedObjectEvent].trainerRange_berryTreeId;
 
         seedA = (u32) (seed >> 32);
         seedB = (u32) (seed << 32 >> 32);
