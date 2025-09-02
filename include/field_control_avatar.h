@@ -39,6 +39,6 @@ void CancelSignPostMessageBox(struct FieldInput *input);
 #define WALK_AWAY_SIGNPOST_FRAMES 6
 
 extern void GetInFrontOfPlayerPosition(struct MapPosition *position);
-extern const struct BgEvent *GetBackgroundEventAtPosition(struct MapHeader *, u16 x, u16 y, u8 elevation);
+extern const struct BgEvent *GetBackgroundEventAtPosition(struct MapHeader *mapHeader, struct MapPosition *mapPosition);
 
 #endif // GUARD_FIELDCONTROLAVATAR_H

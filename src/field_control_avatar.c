@@ -409,7 +409,7 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
 
 static const u8 *GetInteractedBackgroundEventScript(struct MapPosition *position, u8 metatileBehavior, u8 direction)
 {
-    const struct BgEvent *bgEvent = GetBackgroundEventAtPosition(&gMapHeader, position->x - MAP_OFFSET, position->y - MAP_OFFSET, position->elevation);
+    const struct BgEvent *bgEvent = GetBackgroundEventAtPosition(&gMapHeader, position);
 
     if (bgEvent == NULL)
         return NULL;
@@ -1101,7 +1101,7 @@ const u8 *GetCoordEventScriptAtMapPosition(struct MapPosition *position)
     return GetCoordEventScriptAtPosition(&gMapHeader, position->x - MAP_OFFSET, position->y - MAP_OFFSET, position->elevation);
 }
 
-extern const struct BgEvent *GetBackgroundEventAtPosition(struct MapHeader *mapHeader, u16 x, u16 y, u8 elevation)
+extern const struct BgEvent *GetBackgroundEventAtPosition(struct MapHeader *mapHeader, struct MapPosition *mapPosition)
 {
     u8 i;
     const struct BgEvent *bgEvents = mapHeader->events->bgEvents;
@@ -1109,9 +1109,9 @@ extern const struct BgEvent *GetBackgroundEventAtPosition(struct MapHeader *mapH
 
     for (i = 0; i < bgEventCount; i++)
     {
-        if ((u16)bgEvents[i].x == x && (u16)bgEvents[i].y == y)
+        if ((u16)bgEvents[i].x == mapPosition->x - MAP_OFFSET && (u16)bgEvents[i].y == mapPosition->y - MAP_OFFSET)
         {
-            if (bgEvents[i].elevation == elevation || bgEvents[i].elevation == 0)
+            if (bgEvents[i].elevation == mapPosition->elevation || bgEvents[i].elevation == 0)
                 return &bgEvents[i];
         }
     }
@@ -1238,7 +1238,7 @@ static void SetUpWalkIntoSignScript(const u8 *script, u32 playerDirection)
 
 static const u8 *GetSignpostScriptAtMapPosition(struct MapPosition *position)
 {
-    const struct BgEvent *event = GetBackgroundEventAtPosition(&gMapHeader, position->x - 7, position->y - 7, position->elevation);
+    const struct BgEvent *event = GetBackgroundEventAtPosition(&gMapHeader, position);
     if (event == NULL)
         return NULL;
     if (event->bgUnion.script != NULL)
